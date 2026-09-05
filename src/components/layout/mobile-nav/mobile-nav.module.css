@@ -1,0 +1,42 @@
+.menu,
+.menuOpen {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  background: var(--foreground);
+  transition:
+    opacity 300ms ease,
+    visibility 300ms ease;
+}
+
+.menu {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.menuOpen {
+  visibility: visible;
+  opacity: 1;
+}
+
+.menuLine {
+  transform-box: fill-box;
+  transform-origin: center;
+  transition: transform 300ms ease;
+}
+
+.menuLineTop.menuLineOpen {
+  transform: translateY(4px) rotate(45deg);
+}
+
+.menuLineBottom.menuLineOpen {
+  transform: translateY(-4px) rotate(-45deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .menu,
+  .menuOpen,
+  .menuLine {
+    transition: none;
+  }
+}

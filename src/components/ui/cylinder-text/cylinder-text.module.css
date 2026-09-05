@@ -1,0 +1,35 @@
+.viewport {
+  position: relative;
+  display: grid;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  place-items: center;
+  overflow: visible;
+  perspective: 900px;
+  perspective-origin: 50% 60%;
+}
+
+.cylinder {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  transform-origin: center center;
+  transform-style: preserve-3d;
+  white-space: nowrap;
+  will-change: transform;
+}
+
+.character {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: block;
+  width: max-content;
+  transform-origin: center center;
+  backface-visibility: visible;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-select: none;
+}

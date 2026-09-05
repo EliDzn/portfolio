@@ -1,26 +1,148 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@layer base {
+  html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+  }
+
+  [id] {
+  scroll-margin-top: 5rem;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
 }
+
+
+
+:root {
+  --background: oklch(0.987 0.007 106.52);
+  --foreground: oklch(0.21 0.002 17.282);
+/* 8E8E88 */
+  --subtle-foreground: oklch(0.645 0.009 106.643);
+  --muted-foreground: oklch(0.473 0.006 106.638);
+
+  --accent: oklch(0.703 0.175 46.625);
+  --accent-hover: oklch(0.64 0.186 42.908);
+  --accent-pressed: oklch(0.5895 0.1705 42.9343);
+
+  --outline-hover: oklch(0.968 0.015 33.071);
+  --outline-pressed: oklch(0.942 0.026 32.236);
+}
+
 
 @theme inline {
+  /* Colors */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+
+  --color-muted-foreground: var(--muted-foreground);
+  --color-subtle-foreground:var(--subtle-foreground);
+
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-pressed: var(--accent-pressed);
+
+  --color-outline-hover: var(--outline-hover);
+  --color-outline-pressed: var(--outline-pressed);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@theme {
+  /* Display */
+  --text-display-mobile: 2.6666667rem;
+  --text-display-tablet: 4.3125rem;
+  --text-display-desktop: 4.3125rem;
+
+  --text-display-mobile--line-height: 2.625rem;
+  --text-display-tablet--line-height: 4rem;
+  --text-display-desktop--line-height: 4.8125rem;
+
+  --text-display-mobile--letter-spacing: 0;
+  --text-display-tablet--letter-spacing: -0.03em;
+  --text-display-desktop--letter-spacing: -0.03em;
+
+  /* H1 */
+  --text-h1-mobile: 2.1875rem;
+  --text-h1-tablet: 2.75rem;
+  --text-h1-desktop: 3.4375rem;
+
+  --text-h1-mobile--line-height: 2.625rem;
+  --text-h1-tablet--line-height: 3.25rem;
+  --text-h1-desktop--line-height: 4rem;
+
+  --text-h1-mobile--letter-spacing: 0;
+  --text-h1-tablet--letter-spacing: -0.02em;
+  --text-h1-desktop--letter-spacing: -0.02em;
+
+  /* H2 */
+  --text-h2-tablet: 2.75rem;
+  --text-h2-desktop: 2.75rem;
+
+  --text-h2-tablet--line-height: 3.25rem;
+  --text-h2-desktop--line-height: 3.375rem;
+
+  --text-h2-tablet--letter-spacing: -0.01em;
+  --text-h2-desktop--letter-spacing: -0.01em;
+
+  /* H3 */
+  --text-h3-tablet: 1.75rem;
+  --text-h3-desktop: 2.1875rem;
+
+  --text-h3-tablet--line-height: 2.25rem;
+  --text-h3-desktop--line-height: 2.8125rem;
+
+  /* H4 */
+  --text-h4-tablet: 1.375rem;
+  --text-h4-desktop: 1.75rem;
+
+  --text-h4-tablet--line-height: 1.75rem;
+  --text-h4-desktop--line-height: 2.3125rem;
+
+  /* Body-lg */
+  --text-body-lg-mobile: 1rem;
+  --text-body-lg-tablet: 1.25rem;
+  --text-body-lg-desktop: 1.375rem;
+
+  --text-body-lg-mobile--line-height: 1.5rem;
+  --text-body-lg-tablet--line-height: 1.75rem;
+  --text-body-lg-desktop--line-height: 1.9375rem;
+
+  /* Body-md */
+  --text-body-md-mobile: 1rem;
+  --text-body-md-desktop: 1.125rem;
+
+  --text-body-md-mobile--line-height: 1.5rem;
+  --text-body-md-desktop--line-height: 1.625rem;
+
+  /* Caption */
+  --text-caption-base: 0.875rem;
+  --text-caption-base--line-height: 1.375rem;
+
+  /* Fine print */
+  --text-fine-base: 0.75rem;
+  --text-fine-base--line-height: 1.125rem;
+
+  /* Layout */
+  --spacing-page-mobile: 1rem;
+  --spacing-page-tablet: 1.5rem;
+  --spacing-page-desktop: 2.25rem;
+
+  --spacing-grid-mobile: 1rem;
+  --spacing-grid-tablet: 1.25rem;
+  --spacing-grid-desktop: 1.5rem;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Geist, Helvetica, sans-serif;
 }
+
+/* consier tis::after */
+/* @media (prefers-reduced-motion: reduce) {
+  /* disable/reduce non-essential animation */
