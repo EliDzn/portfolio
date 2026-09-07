@@ -10,8 +10,9 @@ const geistSans = Geist({
 });
 
 export const metadata: Metadata = {
-  title: "Eli Dizon Portfolio",
-  description: "Software Developer, Design Engineer based in the Philippines"
+  title: "Eli Dizon",
+  description:
+    "Full-stack developer and computer science graduate, fluent between design and code, building digital experiences with React, TypeScript, and UI/UX expertise"
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
