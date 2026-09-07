@@ -37,14 +37,13 @@ export default function ProjectCard({
       <div className="absolute inset-0 z-10 bg-muted-foreground/80 transition-colors duration-200 ease-out group-hover:bg-foreground/80" />
 
       <div className="relative z-20 w-full">
-        <p className="text-foreground group-hover:text-accent text-h4-desktop md:text-h4-desktop lg:text-h3-desktop font-semibold transition-colors duration-200 ease-out">
+        <p className="text-foreground/80 group-hover:text-accent text-h4-desktop md:text-h4-desktop lg:text-h3-desktop font-semibold transition-colors duration-200 ease-out">
           {title}
         </p>
 
         <Text
-          as="p"
           variant="caption"
-          className="text-subtle-foreground  group-hover:text-background transition-colors ease-out duration-150"
+          className="text-subtle-foreground group-hover:text-background transition-colors ease-out duration-150"
         >
           {tags.join(" • ")}
         </Text>
@@ -56,17 +55,16 @@ export default function ProjectCard({
           transition-[grid-template-rows,transform,margin,padding]
           duration-300 ease-out
           group-hover:mt-4
-          group-hover:translate-y-[-8px]
+          group-hover:translate-y-2
           group-hover:pt-0
           group-hover:grid-rows-[auto_1fr]
           group-focus-visible:mt-4
-          group-focus-visible:translate-y-[-8px]
+          group-focus-visible:translate-y-2
           group-focus-visible:pt-0
           group-focus-visible:grid-rows-[auto_1fr]
         "
       >
         <Text
-          as="p"
           variant="caption"
           className="text-subtle-foreground group-hover:text-background transition-colors ease-out duration-150"
         >

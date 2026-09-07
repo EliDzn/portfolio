@@ -1,4 +1,4 @@
-import { ReactNode, ComponentPropsWithoutRef, ElementType } from "react";
+import React, { ComponentPropsWithoutRef, ElementType, ReactNode } from "react";
 import { clsx } from "clsx";
 
 type TypographyVariant =
@@ -12,11 +12,14 @@ type TypographyVariant =
   | "caption"
   | "fineprint";
 
-type TextProps<T extends ElementType> = {
+type TextOwnProps<T extends ElementType> = {
   as?: T;
   variant?: TypographyVariant;
-  children: ReactNode;
-} & ComponentPropsWithoutRef<T>;
+  children?: ReactNode;
+};
+
+type TextProps<T extends ElementType> = TextOwnProps<T> &
+  Omit<ComponentPropsWithoutRef<T>, keyof TextOwnProps<T>>;
 
 export default function Text<T extends ElementType = "p">({
   as,
@@ -25,7 +28,7 @@ export default function Text<T extends ElementType = "p">({
   children,
   ...props
 }: TextProps<T>) {
-  const Component = as || "p";
+  const Component = (as ?? "p") as ElementType;
 
   const variantClasses: Record<TypographyVariant, string> = {
     display:
@@ -42,19 +45,19 @@ export default function Text<T extends ElementType = "p">({
     "body-lg":
       "text-body-lg-mobile md:text-body-lg-tablet lg:text-body-lg-desktop font-normal",
 
-    "body-md": "text-body-md-mobile  md:text-body-md-desktop font-normal",
+    "body-md": "text-body-md-mobile md:text-body-md-desktop font-normal",
 
     caption: "text-caption-base font-normal",
 
     fineprint: "text-fine-base font-normal"
   };
 
-  return (
-    <Component
-      className={clsx("text-foreground", variantClasses[variant], className)}
-      {...props}
-    >
-      {children}
-    </Component>
+  return React.createElement(
+    Component,
+    {
+      ...props,
+      className: clsx("text-foreground", variantClasses[variant], className)
+    },
+    children
   );
 }

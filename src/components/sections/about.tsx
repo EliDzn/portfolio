@@ -47,7 +47,11 @@ export default function About() {
             />
           </div>
 
-          <Text as="p" variant="body-lg" className="font-semibold text-end">
+          <Text
+            as="p"
+            variant="body-lg"
+            className="font-semibold text-end uppercase"
+          >
             Eli Dizon
           </Text>
         </div>

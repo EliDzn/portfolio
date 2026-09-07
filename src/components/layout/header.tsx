@@ -28,10 +28,8 @@ export default function Header() {
   return (
     <header
       className={[
-        "fixed z-30 w-full transition-colors duration-300",
-        isOpen
-          ? "bg-foreground backdrop-blur-none"
-          : "bg-background/70 backdrop-blur-xs"
+        "fixed z-30 w-full transition-colors duration-300 bg-transparent",
+        isOpen ? "backdrop-blur-none" : "backdrop-blur-xs"
       ].join(" ")}
     >
       <Container className="flex h-20 items-center justify-between">
