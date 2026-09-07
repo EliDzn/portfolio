@@ -18,11 +18,7 @@ export default function Hero() {
       <div className="col-span-full row-start-2 mb-8 grid grid-cols-subgrid items-end">
         <div className="col-span-4 lg:col-span-8">
           <Text as="h1" variant="h1">
-            I’m Eli, a{" "}
-            <RotatingText
-              words={["Fullstack Developer", "Design Engineer", "Builder"]}
-              className="text-accent"
-            />
+            I’m Eli, a <RotatingText words={roles} className="text-accent" />
           </Text>
 
           <SocialLinks />
