@@ -5,7 +5,7 @@ import SocialLinks from "../ui/social-links";
 import RotatingText from "../ui/rotating-text";
 
 export default function Hero() {
-  const dynamicWords = ["Fullstack Developer", "Design Engineer", "Builder"];
+  const roles = ["Fullstack Developer", "Design Engineer", "Builder"];
   return (
     <section
       id="hero"

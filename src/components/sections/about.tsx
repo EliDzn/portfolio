@@ -7,7 +7,7 @@ export default function About() {
     {
       issuer: "Google",
       title: "UX Design Professional Certificate (v2)",
-      date: "Nov 2025"
+      date: "November 2025"
     },
     {
       issuer: "freeCodeCamp",

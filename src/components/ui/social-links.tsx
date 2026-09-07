@@ -22,7 +22,7 @@ export default function SocialLinks() {
         >
           <Text
             variant="body-md"
-            className="text-subtle-foreground transition-all duration-300 ease-out group-hover:text-background group-active:text-accent-pressed bg-linear-to-r from-foreground from-50% to-transparent to-50% bg-size-[length:200%_100%] bg-[position:100%_0%] group-hover:bg-[position:0%_0%]"
+            className="text-subtle-foreground transition-all duration-300 ease-out group-hover:text-background group-active:text-accent-pressed bg-linear-to-r from-foreground from-50% to-transparent to-50% bg-size-[200%_100%] bg-position-[100%_0%] group-hover:bg-position-[0%_0%]"
           >
             {profile.name}
           </Text>
