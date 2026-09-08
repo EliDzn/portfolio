@@ -11,7 +11,9 @@ import styles from "./intent-text.module.css";
 gsap.registerPlugin(ScrollTrigger, SplitText, useGSAP);
 
 const text =
-  "I have passion for building products where thoughtful design and strategic engineering complement one another. I enjoy solving problems that improve developer workflows, make interfaces more intuitive, and help users accomplish tasks with less friction.";
+  "Creativity is most valuable when it serves a purpose, and not just to make something work or look good, but to understand why it should exist that way in the first place. A great design should make you wonder how someone thought of it, then make you realize why it had to be that way. ";
+
+// "I have passion for building products where thoughtful design and strategic engineering complement one another. I enjoy solving problems that improve developer workflows, make interfaces more intuitive, and help users accomplish tasks with less friction.";
 
 // I build products where thoughtful design and robust engineering reinforce one another. I value harmony over novelty using hierarchy, rhythm, and restraint to make interfaces intuitive, cohesive, and rewarding to explore.
 

@@ -24,10 +24,9 @@ export default function Hero() {
           <SocialLinks />
 
           <Text variant="body-lg" className="text-muted-foreground">
-            PH-based designer & developer that curate user-centered, minimalist
-            interfaces with a desktop-first design that feels alive, where every
-            micro-interaction makes the experience both visually refined and
-            functional.
+            PH-based developer who bridges design and engineering to create
+            user-centered web experiences that are intuitive, refined, and
+            brought to life through thoughtful interaction.
           </Text>
         </div>
 

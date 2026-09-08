@@ -37,7 +37,7 @@ export default function ProjectCard({
       <div className="absolute inset-0 z-10 bg-muted-foreground/80 transition-colors duration-200 ease-out group-hover:bg-foreground/80" />
 
       <div className="relative z-20 w-full">
-        <p className="text-foreground/80 group-hover:text-accent text-h4-desktop md:text-h4-desktop lg:text-h3-desktop font-semibold transition-colors duration-200 ease-out">
+        <p className="text-background/80 group-hover:text-accent text-h4-desktop md:text-h4-desktop lg:text-h3-desktop font-semibold transition-colors duration-200 ease-out">
           {title}
         </p>
 

@@ -3,6 +3,19 @@ import Text from "../ui/typography";
 import CertificateEntry from "../ui/certificate-entry";
 
 export default function About() {
+  const Technologies = [
+    "HTML5",
+    "CSS3",
+    "JavaScript",
+    "React",
+    "Next.js",
+    "Node.js",
+    "Express",
+    "PostgreSQL",
+    "Tailwind CSS",
+    "GitHub",
+    "Figma"
+  ];
   const certificates = [
     {
       issuer: "Google",
@@ -22,7 +35,7 @@ export default function About() {
     {
       issuer: "freeCodeCamp",
       title: "Responsive Web Design",
-      date: "Jan 2023"
+      date: "January 2023"
     }
   ];
 
@@ -67,8 +80,8 @@ export default function About() {
             </Text>
 
             <Text variant="body-md">
-              Offers creative solutions with seamless user experience based on a
-              user-centered, data-driven approach to design.
+              I turn complex problems into simple, thoughtful experiences,
+              bridging design and engineering from Figma to production.
             </Text>
           </section>
 
@@ -80,11 +93,11 @@ export default function About() {
             >
               Tech Stack
             </Text>
-
-            <Text variant="body-md">
-              Proficient in HTML, CSS, JavaScript, and frameworks such as React
-              and Next.js.
-            </Text>
+            {Technologies.map((tech) => (
+              <Text key={tech} variant="body-md">
+                {tech}
+              </Text>
+            ))}
           </section>
         </div>
 
