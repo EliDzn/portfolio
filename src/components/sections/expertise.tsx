@@ -1,7 +1,7 @@
 import Text from "@/components/ui/typography";
-import FocusSummary from "@/components/ui/focus-summary";
+import ExpertiseSummary from "@/components/ui/expertise-summary";
 
-const focusAreas = [
+const expertise = [
   {
     title: "Full-stack Web Development",
     tags: ["React.js", "Next.js", "Node.js", "Express.js"],
@@ -28,10 +28,10 @@ const focusAreas = [
   }
 ];
 
-export default function FocusArea() {
+export default function Expertise() {
   return (
     <section
-      id="focus-area"
+      id="expertise"
       className="col-span-full grid min-h-screen grid-cols-subgrid items-start"
     >
       <div className="col-span-full lg:col-start-2 lg:col-span-9 my-auto">
@@ -40,15 +40,15 @@ export default function FocusArea() {
         </Text>
 
         <div className="w-full flex flex-col gap-2">
-          {focusAreas.map((area, index) => (
-            <FocusSummary
+          {expertise.map((area, index) => (
+            <ExpertiseSummary
               key={area.title}
               index={index + 1}
               title={area.title}
               tags={area.tags}
             >
               {area.description}
-            </FocusSummary>
+            </ExpertiseSummary>
           ))}
         </div>
       </div>

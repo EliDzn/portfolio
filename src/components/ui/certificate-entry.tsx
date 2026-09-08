@@ -23,7 +23,7 @@ export default function CertificateEntry({
           </Text>
         </div>
 
-        <p className="text-body-lg-desktop">{title}</p>
+        <p className="text-body-lg-desktop font-medium">{title}</p>
       </div>
     </div>
   );

@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 import Text from "./typography";
 
-type FocusSummaryProps = {
+type ExpertiseSummaryProps = {
   index: number;
   title: string;
   tags: string[];
@@ -9,13 +9,13 @@ type FocusSummaryProps = {
   defaultOpen?: boolean;
 };
 
-export default function FocusSummary({
+export default function ExpertiseSummary({
   index,
   title,
   tags,
   children,
   defaultOpen = false
-}: FocusSummaryProps) {
+}: ExpertiseSummaryProps) {
   return (
     <details open={defaultOpen} className="group pb-2">
       <summary className="list-none [&::-webkit-details-marker]:hidden">

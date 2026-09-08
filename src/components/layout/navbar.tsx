@@ -25,7 +25,7 @@ export default function Navbar() {
       <ul className="flex flex-row gap-6">
         <MenuLink href="#about">About</MenuLink>
         <MenuLink href="#projects">Projects</MenuLink>
-        <MenuLink href="#focus-area">Skills</MenuLink>
+        <MenuLink href="#expertise">Expertise</MenuLink>
         <MenuLink href="#contact">Contact</MenuLink>
         <MenuLink
           href="/EliDizon_Resume.pdf"

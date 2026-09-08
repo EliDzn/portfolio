@@ -9,7 +9,7 @@ import Link from "next/link";
 const links = [
   { href: "#about", label: "About" },
   { href: "#projects", label: "Projects" },
-  { href: "#focus-area", label: "Skills" },
+  { href: "#expertise", label: "Expertise" },
   { href: "#contact", label: "Contact" },
   { href: "/EliDizon_Resume.pdf", label: "Resume" }
 ];

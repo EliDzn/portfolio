@@ -30,7 +30,7 @@ export default function Hero() {
           </Text>
         </div>
 
-        <div className="col-span-4 mt-4 flex flex-row flex-wrap gap-2 lg:col-start-9 lg:col-span-4 lg:mt-0 lg:justify-end">
+        <div className="col-span-4 mt-4 flex flex-row flex-wrap gap-2 lg:col-start-9 lg:col-span-4 lg:mt-0 justify-end">
           <Button variant="Secondary" asChild>
             <a
               href="/EliDizon_Resume.pdf"
