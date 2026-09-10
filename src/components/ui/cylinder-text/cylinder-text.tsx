@@ -1,4 +1,3 @@
-// cylinder-text.tsx
 "use client";
 
 import {

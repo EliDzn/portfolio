@@ -1,6 +1,6 @@
 import Image from "next/image";
-import Text from "./typography";
 import Link from "next/link";
+import Text from "./typography";
 
 type ProjectCardProps = {
   title: string;

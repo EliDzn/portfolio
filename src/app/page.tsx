@@ -9,16 +9,14 @@ import Intent from "@/components/sections/intent";
 export default function Home() {
   return (
     <>
-      <main>
-        <PageGrid>
-          <Hero />
-          <Intent />
-          <About />
-          <Projects />
-          <Expertise />
-          <Contact />
-        </PageGrid>
-      </main>
+      <PageGrid>
+        <Hero />
+        <Intent />
+        <About />
+        <Projects />
+        <Expertise />
+        <Contact />
+      </PageGrid>
     </>
   );
 }
