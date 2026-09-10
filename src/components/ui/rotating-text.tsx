@@ -108,7 +108,7 @@ export default function RotatingText({
               wordsRef.current[index] = element;
             }
           }}
-          className="col-start-1 row-start-1 whitespace-nowrap"
+          className="col-start-1 row-start-1 whitespace-nowrap bg-transparent"
         >
           {word}
         </span>

@@ -27,13 +27,16 @@ export default function Navbar() {
         <MenuLink href="#projects">Projects</MenuLink>
         <MenuLink href="#expertise">Expertise</MenuLink>
         <MenuLink href="#contact">Contact</MenuLink>
-        <MenuLink
-          href="/EliDizon_Resume.pdf"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Resume
-        </MenuLink>
+        <li>
+          <a
+            href="/EliDizon_Resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="uppercase font-foreground font-semibold hover:text-accent transition-colors duration-150 ease-out"
+          >
+            Resume
+          </a>
+        </li>
       </ul>
     </nav>
   );
