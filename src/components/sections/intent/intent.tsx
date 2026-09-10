@@ -1,4 +1,5 @@
-import IntentText from "@/components/ui/intent-text/intent-text";
+import IntentText from "@/components/sections/intent/intent-text/intent-text";
+
 export default function Intent() {
   return (
     <section

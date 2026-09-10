@@ -1,5 +1,5 @@
 import Text from "@/components/ui/typography";
-import ExpertiseSummary from "@/components/ui/expertise-summary";
+import ExpertiseSummary from "@/components/sections/expertise/expertise-summary";
 
 const expertise = [
   {

@@ -1,6 +1,6 @@
 import Image from "next/image";
-import Text from "../ui/typography";
-import CertificateEntry from "../ui/certificate-entry";
+import Text from "../../ui/typography";
+import CertificateEntry from "./certificate-entry";
 
 export default function About() {
   const Technologies = [

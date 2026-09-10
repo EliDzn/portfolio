@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import Text from "./typography";
+import Text from "../../ui/typography";
 
 type ExpertiseSummaryProps = {
   index: number;

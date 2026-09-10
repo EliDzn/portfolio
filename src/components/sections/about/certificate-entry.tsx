@@ -1,4 +1,4 @@
-import Text from "./typography";
+import Text from "../../ui/typography";
 
 type CertificateEntryProps = {
   issuer: string;

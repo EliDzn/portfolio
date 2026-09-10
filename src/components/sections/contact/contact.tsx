@@ -1,4 +1,4 @@
-import Text from "../ui/typography";
+import Text from "@/components/ui/typography";
 
 export default function Contact() {
   return (

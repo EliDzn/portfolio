@@ -1,6 +1,6 @@
-import Text from "../ui/typography";
-import ProjectCard from "../ui/project-card";
-import ProjectGrid from "../ui/project-grid";
+import Text from "../../ui/typography";
+import ProjectCard from "./project-card";
+import ProjectGrid from "./project-grid";
 
 export default function Projects() {
   return (

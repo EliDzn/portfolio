@@ -41,8 +41,8 @@ export default function ProjectGrid({ children }: ProjectGridProps) {
 
     const moveTooltip = (event: PointerEvent) => {
       gsap.to(tooltip, {
-        x: event.clientX + 12,
-        y: event.clientY + 12,
+        x: event.clientX + 16,
+        y: event.clientY + 16,
         duration: 0.2,
         ease: "power2.out",
         overwrite: "auto"

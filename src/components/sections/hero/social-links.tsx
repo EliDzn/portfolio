@@ -1,4 +1,4 @@
-import Text from "./typography";
+import Text from "../../ui/typography";
 
 const SOCIAL_PROFILES = [
   { name: "LinkedIn", href: "linkedin.com/in/eli-dizon" },

@@ -1,8 +1,8 @@
-import Text from "../ui/typography";
-import Button from "../ui/button";
-import CylinderText from "../ui/cylinder-text/cylinder-text";
-import SocialLinks from "../ui/social-links";
-import RotatingText from "../ui/rotating-text";
+import Text from "../../ui/typography";
+import Button from "../../ui/button";
+import CylinderText from "./cylinder-text/cylinder-text";
+import SocialLinks from "./social-links";
+import RotatingText from "./cylinder-text/rotating-text";
 
 export default function Hero() {
   const roles = ["Fullstack Developer", "Design Engineer", "Builder"];
