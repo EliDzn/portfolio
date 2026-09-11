@@ -23,10 +23,10 @@ export default function Navbar() {
   return (
     <nav>
       <ul className="flex flex-row gap-6">
-        <MenuLink href="#about">About</MenuLink>
-        <MenuLink href="#projects">Projects</MenuLink>
-        <MenuLink href="#expertise">Expertise</MenuLink>
-        <MenuLink href="#contact">Contact</MenuLink>
+        <MenuLink href="/#about">About</MenuLink>
+        <MenuLink href="/#projects">Projects</MenuLink>
+        <MenuLink href="/#expertise">Expertise</MenuLink>
+        <MenuLink href="/#contact">Contact</MenuLink>
         <li>
           <a
             href="/EliDizon_Resume.pdf"

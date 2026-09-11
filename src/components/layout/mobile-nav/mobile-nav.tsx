@@ -5,10 +5,10 @@ import Link from "next/link";
 import styles from "./mobile-nav.module.css";
 import Container from "../container";
 const links = [
-  { href: "#about", label: "About", type: "internal" },
-  { href: "#projects", label: "Projects", type: "internal" },
-  { href: "#expertise", label: "Expertise", type: "internal" },
-  { href: "#contact", label: "Contact", type: "internal" },
+  { href: "/#about", label: "About", type: "internal" },
+  { href: "/#projects", label: "Projects", type: "internal" },
+  { href: "/#expertise", label: "Expertise", type: "internal" },
+  { href: "/#contact", label: "Contact", type: "internal" },
   { href: "/EliDizon_Resume.pdf", label: "Resume", type: "pdf" }
 ] as const;
 type MobileNavProps = { isOpen: boolean; onToggle: (open: boolean) => void };
