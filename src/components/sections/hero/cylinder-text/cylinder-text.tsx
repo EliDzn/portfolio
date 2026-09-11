@@ -132,7 +132,7 @@ function Cylinder({ fontSizePx, fontFamily, fontWeight, color }: Metrics) {
   useFrame((_, delta) => {
     if (!groupRef.current) return;
     const dt = Math.min(delta, MAX_DELTA);
-    groupRef.current.rotation.y += (dt * Math.PI * 2) / ROTATION_SECONDS;
+    groupRef.current.rotation.y -= (dt * Math.PI * 2) / ROTATION_SECONDS;
   });
 
   return (
