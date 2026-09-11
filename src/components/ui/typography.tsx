@@ -1,5 +1,10 @@
 import React, { ComponentPropsWithoutRef, ElementType, ReactNode } from "react";
-import { clsx } from "clsx";
+import { clsx, type ClassValue } from "clsx";
+import { twMerge } from "tailwind-merge";
+
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs));
+}
 
 type TypographyVariant =
   | "display"
@@ -56,7 +61,7 @@ export default function Text<T extends ElementType = "p">({
     Component,
     {
       ...props,
-      className: clsx("text-foreground", variantClasses[variant], className)
+      className: cn("text-foreground", variantClasses[variant], className)
     },
     children
   );
