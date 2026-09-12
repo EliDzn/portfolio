@@ -1,6 +1,35 @@
 import React, { ComponentPropsWithoutRef, ElementType, ReactNode } from "react";
+
 import { clsx, type ClassValue } from "clsx";
-import { twMerge } from "tailwind-merge";
+import { extendTailwindMerge } from "tailwind-merge";
+
+const twMerge = extendTailwindMerge({
+  extend: {
+    classGroups: {
+      "font-size": [
+        "text-display-mobile",
+        "text-display-tablet",
+        "text-display-desktop",
+        "text-h1-mobile",
+        "text-h1-tablet",
+        "text-h1-desktop",
+        "text-h2-tablet",
+        "text-h2-desktop",
+        "text-h3-tablet",
+        "text-h3-desktop",
+        "text-h4-tablet",
+        "text-h4-desktop",
+        "text-body-lg-mobile",
+        "text-body-lg-tablet",
+        "text-body-lg-desktop",
+        "text-body-md-mobile",
+        "text-body-md-desktop",
+        "text-caption-base",
+        "text-fine-base"
+      ]
+    }
+  }
+});
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
@@ -61,7 +90,7 @@ export default function Text<T extends ElementType = "p">({
     Component,
     {
       ...props,
-      className: cn("text-foreground", variantClasses[variant], className)
+      className: cn(variantClasses[variant], className)
     },
     children
   );

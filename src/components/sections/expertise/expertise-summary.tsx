@@ -50,7 +50,7 @@ export default function ExpertiseSummary({
           </Text>
 
           <Text
-            as="span"
+            as="h3"
             variant="h3"
             className="
               uppercase

@@ -7,7 +7,11 @@
   }
 
   [id] {
-  scroll-margin-top: 5rem;
+    scroll-margin-top: 5rem;
+  }
+
+  body {
+    color: var(--foreground);
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -16,10 +20,7 @@
       scrollbar-gutter: stable;
     }
   }
-
 }
-
-
 
 :root {
   --background: oklch(0.987 0.007 106.52);
