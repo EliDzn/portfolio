@@ -6,7 +6,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SplitText } from "gsap/SplitText";
 import { useGSAP } from "@gsap/react";
 import Text from "@/components/ui/typography";
-import styles from "./intent-text.module.css";
+import styles from "./philosophy-text.module.css";
 
 gsap.registerPlugin(ScrollTrigger, SplitText, useGSAP);
 
