@@ -10,8 +10,9 @@ import {
 } from "react";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import {
+  BackSide,
   CanvasTexture,
-  DoubleSide,
+  FrontSide,
   Group,
   LinearFilter,
   LinearMipmapLinearFilter,
@@ -37,12 +38,26 @@ type Metrics = {
   fontFamily: string;
   fontWeight: string;
   color: string;
+  backColor: string;
 };
 
-function useGlyphTextures(metrics: Metrics) {
-  return useMemo(() => {
-    const { fontSizePx, fontFamily, fontWeight, color } = metrics;
+function cssColorToHex(cssColor: string): string {
+  const canvas = document.createElement("canvas");
+  canvas.width = 1;
+  canvas.height = 1;
+  const ctx = canvas.getContext("2d")!;
+  ctx.fillStyle = cssColor;
+  ctx.fillRect(0, 0, 1, 1);
+  const [r, g, b] = ctx.getImageData(0, 0, 1, 1).data;
+  return `#${[r, g, b].map((c) => c.toString(16).padStart(2, "0")).join("")}`;
+}
 
+function useGlyphTextures(
+  fontSizePx: number,
+  fontFamily: string,
+  fontWeight: string
+) {
+  return useMemo(() => {
     const measureCanvas = document.createElement("canvas");
     const measureCtx = measureCanvas.getContext("2d")!;
     measureCtx.font = `${fontWeight} ${fontSizePx}px ${fontFamily}`;
@@ -64,7 +79,7 @@ function useGlyphTextures(metrics: Metrics) {
       ctx.font = `${fontWeight} ${fontSizePx}px ${fontFamily}`;
       ctx.textAlign = "center";
       ctx.textBaseline = "middle";
-      ctx.fillStyle = color;
+      ctx.fillStyle = "#ffffff";
       ctx.fillText(character, paddedWidthPx / 2, glyphHeightPx / 2);
 
       const texture = new CanvasTexture(canvas);
@@ -81,21 +96,22 @@ function useGlyphTextures(metrics: Metrics) {
     }
 
     return cache;
-  }, [metrics]);
+  }, [fontSizePx, fontFamily, fontWeight]);
 }
 
-function Cylinder({ fontSizePx, fontFamily, fontWeight, color }: Metrics) {
+function Cylinder({
+  fontSizePx,
+  fontFamily,
+  fontWeight,
+  color,
+  backColor
+}: Metrics) {
   const groupRef = useRef<Group>(null);
   const { viewport, size, gl } = useThree();
 
   const pxToUnit = viewport.width / size.width;
 
-  const glyphTextures = useGlyphTextures({
-    fontSizePx,
-    fontFamily,
-    fontWeight,
-    color
-  });
+  const glyphTextures = useGlyphTextures(fontSizePx, fontFamily, fontWeight);
 
   useEffect(() => {
     const maxAnisotropy = gl.capabilities.getMaxAnisotropy();
@@ -150,19 +166,32 @@ function Cylinder({ fontSizePx, fontFamily, fontWeight, color }: Metrics) {
         const planeWidth = scaledPlaneHeight * glyph.aspect;
 
         return (
-          <mesh
+          <group
             key={`${character}-${index}`}
             position={[Math.sin(theta) * radius, 0, Math.cos(theta) * radius]}
             rotation={[0, theta, 0]}
           >
-            <planeGeometry args={[planeWidth, scaledPlaneHeight]} />
-            <meshBasicMaterial
-              map={glyph.texture}
-              transparent
-              depthWrite={false}
-              side={DoubleSide}
-            />
-          </mesh>
+            <mesh>
+              <planeGeometry args={[planeWidth, scaledPlaneHeight]} />
+              <meshBasicMaterial
+                map={glyph.texture}
+                color={color}
+                side={FrontSide}
+                transparent
+                depthWrite={false}
+              />
+            </mesh>
+            <mesh>
+              <planeGeometry args={[planeWidth, scaledPlaneHeight]} />
+              <meshBasicMaterial
+                map={glyph.texture}
+                color={backColor}
+                side={BackSide}
+                transparent
+                depthWrite={false}
+              />
+            </mesh>
+          </group>
         );
       })}
     </group>
@@ -172,21 +201,25 @@ function Cylinder({ fontSizePx, fontFamily, fontWeight, color }: Metrics) {
 export default function CylinderText({ className }: { className?: string }) {
   const wrapperRef = useRef<HTMLDivElement>(null);
   const probeRef = useRef<HTMLSpanElement>(null);
+  const mutedProbeRef = useRef<HTMLSpanElement>(null);
   const [metrics, setMetrics] = useState<Metrics | null>(null);
   const [isVisible, setIsVisible] = useState(false);
 
   useLayoutEffect(() => {
     const probe = probeRef.current;
+    const mutedProbe = mutedProbeRef.current;
     const wrapper = wrapperRef.current;
-    if (!probe || !wrapper) return;
+    if (!probe || !mutedProbe || !wrapper) return;
 
     const measure = () => {
       const computed = getComputedStyle(probe);
+      const mutedComputed = getComputedStyle(mutedProbe);
       setMetrics({
         fontSizePx: parseFloat(computed.fontSize),
         fontFamily: computed.fontFamily,
         fontWeight: computed.fontWeight,
-        color: computed.color
+        color: cssColorToHex(computed.color),
+        backColor: cssColorToHex(mutedComputed.color)
       });
     };
 
@@ -227,6 +260,12 @@ export default function CylinderText({ className }: { className?: string }) {
         ref={probeRef}
         aria-hidden="true"
         className="sr-only text-display-mobile md:text-display-tablet lg:text-display-desktop"
+      />
+
+      <span
+        ref={mutedProbeRef}
+        aria-hidden="true"
+        className="sr-only text-muted-foreground"
       />
 
       <div
