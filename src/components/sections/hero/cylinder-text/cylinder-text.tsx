@@ -20,7 +20,9 @@ import {
 } from "three";
 import Text from "@/components/ui/typography";
 
-const LABEL = "- THE FAMILIAR, REIMAGINED - THE FAMILIAR, REIMAGINED ";
+// "- THE FAMILIAR, REIMAGINED - THE FAMILIAR, REIMAGINED ";
+
+const LABEL = "- THOUGHTFUL JUDGEMENT, SPARKING CURIOSITY ";
 const CHARACTERS = Array.from(LABEL);
 
 const FONT_SIZE_MULTIPLIER = 1.4;
