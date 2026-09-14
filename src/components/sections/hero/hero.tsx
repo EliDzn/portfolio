@@ -24,9 +24,9 @@ export default function Hero() {
           <SocialLinks />
 
           <Text variant="body-lg" className="text-muted-foreground">
-            PH-based developer who bridges design and engineering to create
-            user-centered web experiences that are intuitive, refined, and
-            brought to life through thoughtful interaction.
+            PH-based, nocturnal developer who bridges design and engineering to
+            create user-facing and internal web experiences that are intuitive,
+            refined, and brought to life through thoughtful interaction.
           </Text>
         </div>
 
