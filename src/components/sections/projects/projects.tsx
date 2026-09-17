@@ -23,6 +23,7 @@ export default function Projects() {
             description="Independently drove the entire product lifecycle and designed end-to-end using a strict mobile-first approach to simplify billing and inventory pipelines for on-the-go freelancers and small businesses."
             date="2023"
             image="/images/BillEase.jpg"
+            link="/projects/billease"
           />
           {/* <ProjectCard
             title="Beautox"
@@ -36,6 +37,7 @@ export default function Projects() {
             description="Worked directly under the UI/UX Director to architect our core design system and low-fidelity wireframes. I then oversaw a team of designers through the implementation phase, ensuring all high-fidelity interfaces remained visually consistent and scalable."
             date="2023"
             image="/images/UST_TechnovationSociety.jpg"
+            link="/projects/billease"
           />
           {/* <ProjectCard
             title="Achromatic To Do App"

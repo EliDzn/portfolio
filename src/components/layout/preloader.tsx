@@ -66,7 +66,7 @@ export default function Preloader({
   return (
     <div
       ref={containerRef}
-      className="fixed inset-0 z-50 flex items-center justify-center bg-foreground backdrop:blur-sm"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-foreground/99 backdrop:blur-md"
       aria-hidden="true"
     >
       <div className="relative size-40">

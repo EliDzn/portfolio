@@ -25,7 +25,7 @@
 :root {
   --background: oklch(0.987 0.007 106.52);
   --foreground: oklch(0.21 0.002 17.282);
-/* 8E8E88 */
+
   --subtle-foreground: oklch(0.645 0.009 106.643);
   --muted-foreground: oklch(0.473 0.006 106.638);
 
@@ -35,8 +35,15 @@
 
   --outline-hover: oklch(0.968 0.015 33.071);
   --outline-pressed: oklch(0.942 0.026 32.236);
-}
 
+  [data-theme="dark"] {
+  --background: oklch(0.21 0.002 17.282);
+  --foreground: oklch(0.97 0.013 27);
+
+  --subtle-foreground: oklch(0.67 0.013 106.745);
+  --muted-foreground: oklch(0.645 0.009 106.643);
+  }
+}
 
 @theme inline {
   /* Colors */

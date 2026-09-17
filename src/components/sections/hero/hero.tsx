@@ -33,7 +33,7 @@ export default function Hero() {
         <div className="col-span-4 mt-4 flex flex-row flex-wrap gap-2 lg:col-start-9 lg:col-span-4 lg:mt-0 md:justify-end">
           <Button variant="Secondary" asChild>
             <a
-              href="/EliDizon_Resume.pdf"
+              href="/Eli_Aleandro_Dizon_Resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
             >

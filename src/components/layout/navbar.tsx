@@ -1,5 +1,6 @@
 import { ReactNode, ComponentProps } from "react";
 import Link from "next/link";
+import { cn } from "../ui/typography";
 
 type MenuLinkProps = ComponentProps<typeof Link> & {
   children: ReactNode;
@@ -10,7 +11,9 @@ const MenuLink = ({ href, children, ...rest }: MenuLinkProps) => {
     <li>
       <Link
         href={href}
-        className="uppercase font-foreground font-semibold hover:text-accent transition-colors duration-150 ease-out"
+        className={cn(
+          "uppercase font-semibold text-foreground transition-colors duration-150 ease-out hover:text-accent"
+        )}
         {...rest}
       >
         {children}
@@ -29,10 +32,10 @@ export default function Navbar() {
         <MenuLink href="/#contact">Contact</MenuLink>
         <li>
           <a
-            href="/EliDizon_Resume.pdf"
+            href="/Eli_Aleandro_Dizon_Resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="uppercase font-foreground font-semibold hover:text-accent transition-colors duration-150 ease-out"
+            className="uppercase font-semibold text-foreground transition-colors duration-150 ease-out hover:text-accent"
           >
             Resume
           </a>

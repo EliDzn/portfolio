@@ -1,13 +1,19 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 import Image from "next/image";
 import Navbar from "./navbar";
 import MobileNav from "./mobile-nav/mobile-nav";
 import Container from "./container";
+import { cn } from "@/components/ui/typography";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
+
+  const isRouteLight = pathname.startsWith("/projects");
+  const isLight = isOpen || isRouteLight;
 
   useEffect(() => {
     const mediaQuery = window.matchMedia("(min-width: 1024px)");
@@ -27,10 +33,11 @@ export default function Header() {
 
   return (
     <header
-      className={[
+      data-theme={isLight ? "dark" : undefined}
+      className={cn(
         "fixed z-30 w-full transition-colors duration-300 bg-transparent",
         isOpen ? "backdrop-blur-none" : "backdrop-blur-xs"
-      ].join(" ")}
+      )}
     >
       <Container className="flex h-20 items-center justify-between">
         <Image
@@ -39,10 +46,10 @@ export default function Header() {
           width={103}
           height={46}
           priority
-          className={[
+          className={cn(
             "h-auto w-20.25 transition-[filter] duration-300 md:w-20.75",
-            isOpen ? "brightness-0 invert" : ""
-          ].join(" ")}
+            isLight && "brightness-0 invert"
+          )}
         />
 
         <div className="hidden lg:block">

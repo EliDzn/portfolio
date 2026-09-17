@@ -1,16 +1,18 @@
 "use client";
+
 import { useSyncExternalStore } from "react";
 import { createPortal } from "react-dom";
 import Link from "next/link";
 import styles from "./mobile-nav.module.css";
 import Container from "../container";
+import { cn } from "@/components/ui/typography";
 
 const links = [
   { href: "/#about", label: "About", type: "internal" },
   { href: "/#projects", label: "Projects", type: "internal" },
   { href: "/#expertise", label: "Expertise", type: "internal" },
   { href: "/#contact", label: "Contact", type: "internal" },
-  { href: "/EliDizon_Resume.pdf", label: "Resume", type: "pdf" }
+  { href: "/Eli_Aleandro_Dizon_Resume.pdf", label: "Resume", type: "pdf" }
 ] as const;
 
 type MobileNavProps = { isOpen: boolean; onToggle: (open: boolean) => void };
@@ -41,6 +43,7 @@ export default function MobileNav({ isOpen, onToggle }: MobileNavProps) {
   function closeMenu() {
     onToggle(false);
   }
+
   return (
     <div className="lg:hidden">
       <button
@@ -49,12 +52,12 @@ export default function MobileNav({ isOpen, onToggle }: MobileNavProps) {
         aria-expanded={isOpen}
         aria-controls="mobile-navigation"
         onClick={toggleMenu}
-        className={[
+        className={cn(
           "relative z-30 flex size-9 items-center justify-center",
           "hover:text-accent hover:cursor-pointer",
           "transition-colors duration-150 ease-out",
           isOpen ? "text-background" : "text-foreground"
-        ].join(" ")}
+        )}
       >
         <svg
           width="36"

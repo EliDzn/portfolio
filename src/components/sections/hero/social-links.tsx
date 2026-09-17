@@ -1,7 +1,7 @@
 import Text from "../../ui/typography";
 
 const SOCIAL_PROFILES = [
-  { name: "LinkedIn", href: "linkedin.com/in/eli-dizon" },
+  { name: "LinkedIn", href: "https://linkedin.com/in/eli-dizon" },
   { name: "GitHub", href: "https://github.com/EliDzn" },
   { name: "Email", href: "mailto:elialeandro.dizon@gmail.com" }
 ];
