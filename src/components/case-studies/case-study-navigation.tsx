@@ -1,6 +1,6 @@
 "use client";
 
-import type { ReactNode } from "react";
+import { useMemo, type ReactNode } from "react";
 
 import useProgress from "@/hooks/use-progress";
 
@@ -20,7 +20,7 @@ export default function CaseStudyNavigation({
   stops,
   children
 }: CaseStudyNavigationProps) {
-  const sectionIds = stops.map(({ id }) => id);
+  const sectionIds = useMemo(() => stops.map(({ id }) => id), [stops]);
   const activeIndex = useProgress(sectionIds);
 
   return (
