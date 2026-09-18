@@ -1,5 +1,7 @@
 "use client";
 
+import { useRef } from "react";
+
 import { gsap } from "@/lib/gsap";
 
 import { cn } from "@/components/ui/typography";
@@ -23,17 +25,21 @@ export default function CaseStudyTimeline({
   orientation
 }: CaseStudyTimelineProps) {
   const isDesktop = orientation === "vertical";
+  const navRef = useRef<HTMLElement>(null);
 
   const scrollToSection = (id: string) => {
     const prefersReduced = window.matchMedia(
       "(prefers-reduced-motion: reduce)"
     ).matches;
 
+    const navHeight = isDesktop ? 0 : (navRef.current?.offsetHeight ?? 0);
+    const offsetY = HEADER_HEIGHT + navHeight;
+
     gsap.to(window, {
       duration: prefersReduced ? 0 : 0.8,
       scrollTo: {
         y: `#${id}`,
-        offsetY: HEADER_HEIGHT
+        offsetY
       },
       ease: "power2.inOut"
     });
@@ -45,6 +51,7 @@ export default function CaseStudyTimeline({
 
   return (
     <nav
+      ref={navRef}
       aria-label="Case study sections"
       data-theme="dark"
       className={cn(
