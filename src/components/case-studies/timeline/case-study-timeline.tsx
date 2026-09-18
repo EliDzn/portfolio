@@ -119,7 +119,7 @@ export default function CaseStudyTimeline({
                   onClick={() => scrollToSection(stop.id)}
                   aria-current={isCurrent ? "step" : undefined}
                   aria-label={stop.label}
-                  className="group relative z-10 flex items-center justify-center rounded-full p-0 outline-none hover:cursor-pointer focus-visible:ring-2 focus-visible:ring-foreground/40"
+                  className="group relative z-10 flex items-center justify-center rounded-full p-3 -m-3 outline-none touch-manipulation hover:cursor-pointer focus-visible:ring-2 focus-visible:ring-foreground/40"
                 >
                   <span
                     className={cn(

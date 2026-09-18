@@ -2,6 +2,8 @@
 
 import { useEffect, useState } from "react";
 
+const TRIGGER_OFFSET = 120;
+
 export default function useProgress(sectionIds: string[]) {
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -14,44 +16,28 @@ export default function useProgress(sectionIds: string[]) {
 
     if (sections.length === 0) return;
 
-    const visibleSections = new Set<string>();
+    const updateActiveIndex = () => {
+      let nextIndex = 0;
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            visibleSections.add(entry.target.id);
-          } else {
-            visibleSections.delete(entry.target.id);
-          }
-        });
-
-        const activeSection = sections
-          .filter((section) => visibleSections.has(section.id))
-          .sort(
-            (a, b) =>
-              Math.abs(a.getBoundingClientRect().top) -
-              Math.abs(b.getBoundingClientRect().top)
-          )[0];
-
-        if (!activeSection) return;
-
-        const index = sectionIds.indexOf(activeSection.id);
-
-        if (index !== -1) {
-          setActiveIndex(index);
+      for (let i = 0; i < sections.length; i++) {
+        if (sections[i].getBoundingClientRect().top - TRIGGER_OFFSET <= 0) {
+          nextIndex = i;
         }
-      },
-      {
-        rootMargin: "-80% 0px -80% 0px",
-        threshold: 0
       }
-    );
 
-    sections.forEach((section) => observer.observe(section));
+      setActiveIndex(nextIndex);
+    };
 
-    return () => observer.disconnect();
-  }, [sectionIds]);
+    updateActiveIndex();
+
+    window.addEventListener("scroll", updateActiveIndex, { passive: true });
+    window.addEventListener("resize", updateActiveIndex);
+
+    return () => {
+      window.removeEventListener("scroll", updateActiveIndex);
+      window.removeEventListener("resize", updateActiveIndex);
+    };
+  }, [sectionIds.join(",")]);
 
   return activeIndex;
 }
