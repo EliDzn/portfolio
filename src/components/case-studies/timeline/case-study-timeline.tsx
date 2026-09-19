@@ -1,9 +1,9 @@
 "use client";
 
 import { useRef } from "react";
-
 import { gsap } from "@/lib/gsap";
 
+import Text from "@/components/ui/typography";
 import { cn } from "@/components/ui/typography";
 
 const HEADER_HEIGHT = 80;
@@ -140,12 +140,13 @@ export default function CaseStudyTimeline({
                   />
 
                   {isCurrent && isDesktop && (
-                    <span
+                    <Text
+                      variant="caption"
                       aria-hidden="true"
-                      className="pointer-events-none uppercase absolute left-[calc(100%+0.75rem)] top-1/2 -translate-y-1/2 whitespace-nowrap text-body-sm text-foreground"
+                      className="pointer-events-none uppercase absolute left-[calc(100%+0.75rem)] top-1/2 -translate-y-1/2 whitespace-nowrap text-foreground font-light"
                     >
                       {stop.label}
-                    </span>
+                    </Text>
                   )}
                 </button>
               </div>
