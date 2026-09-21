@@ -12,8 +12,8 @@ export default function Home() {
       <PageGrid>
         <Hero />
         <Philosophy />
-        <About />
         <Projects />
+        <About />
         <Expertise />
         <Contact />
       </PageGrid>

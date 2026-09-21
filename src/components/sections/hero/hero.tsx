@@ -24,9 +24,8 @@ export default function Hero() {
           <SocialLinks />
 
           <Text variant="body-lg" className="text-muted-foreground">
-            PH-based, nocturnal developer who bridges design and engineering to
-            create user-facing and internal web experiences that are intuitive,
-            refined, and brought to life through thoughtful interaction.
+            I turn complex problems into simple, thoughtful experiences,
+            bridging design and engineering from Figma to production.
           </Text>
         </div>
 

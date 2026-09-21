@@ -8,8 +8,8 @@ import Container from "../container";
 import { cn } from "@/components/ui/typography";
 
 const links = [
-  { href: "/#about", label: "About", type: "internal" },
   { href: "/#projects", label: "Projects", type: "internal" },
+  { href: "/#about", label: "About", type: "internal" },
   { href: "/#expertise", label: "Expertise", type: "internal" },
   { href: "/#contact", label: "Contact", type: "internal" },
   { href: "/Eli_Aleandro_Dizon_Resume.pdf", label: "Resume", type: "pdf" }

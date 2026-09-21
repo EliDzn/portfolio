@@ -80,8 +80,10 @@ export default function About() {
             </Text>
 
             <Text variant="body-md">
-              I turn complex problems into simple, thoughtful experiences,
-              bridging design and engineering from Figma to production.
+              PH-based, nocturnal developer who bridges design and engineering
+              to create user-facing and internal web experiences that are
+              intuitive, refined, and brought to life through thoughtful
+              interaction.
             </Text>
           </section>
 

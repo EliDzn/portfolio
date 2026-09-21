@@ -7,6 +7,7 @@ import Navbar from "./navbar";
 import MobileNav from "./mobile-nav/mobile-nav";
 import Container from "./container";
 import { cn } from "@/components/ui/typography";
+import Link from "next/link";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -40,17 +41,19 @@ export default function Header() {
       )}
     >
       <Container className="flex h-20 items-center justify-between">
-        <Image
-          src="/logo.svg"
-          alt="Eli Dizon"
-          width={103}
-          height={46}
-          priority
-          className={cn(
-            "h-auto w-20.25 transition-[filter] duration-300 md:w-20.75",
-            isLight && "brightness-0 invert"
-          )}
-        />
+        <Link href="/">
+          <Image
+            src="/logo.svg"
+            alt="Eli Dizon"
+            width={103}
+            height={46}
+            priority
+            className={cn(
+              "h-auto w-20.25 transition-[filter] duration-300 md:w-20.75",
+              isLight && "brightness-0 invert"
+            )}
+          />
+        </Link>
 
         <div className="hidden lg:block">
           <Navbar />
