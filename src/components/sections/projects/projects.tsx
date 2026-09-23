@@ -22,7 +22,7 @@ export default function Projects() {
             tags={["Case Study", "Design System"]}
             description="Independently drove the entire product lifecycle and designed end-to-end using a strict mobile-first approach to simplify billing and inventory pipelines for on-the-go freelancers and small businesses."
             date="2023"
-            image="/images/BillEase.jpg"
+            image="/images/case-studies/billease/BillEase.webp"
             link="/projects/billease"
           />
           {/* <ProjectCard
