@@ -10,19 +10,22 @@ const geistSans = Geist({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://your-domain.com"),
   title: "Eli Dizon | Fullstack Developer & Design Engineer",
   description:
-    "Fullstack developer and computer science graduate, fluent between design and code, building digital experiences end-to-end with React, TypeScript, and UI/UX expertise"
+    "Fullstack developer and computer science graduate, fluent between design and code, building digital experiences end-to-end with React, TypeScript, and UI/UX expertise",
+  openGraph: {
+    title: "Eli Dizon | Fullstack Developer & Design Engineer",
+    description:
+      "Fullstack developer and computer science graduate, fluent between design and code, building digital experiences end-to-end with React, TypeScript, and UI/UX expertise",
+    type: "website"
+  }
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} h-full antialiased`}
-      data-scroll-behavior="smooth"
-    >
-      <body className="min-h-full">
+    <html lang="en" className={`${geistSans.variable} h-full antialiased`}>
+      <body>
         <Header />
         <PreloaderGate />
         <main>{children}</main>

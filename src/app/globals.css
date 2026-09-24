@@ -3,9 +3,7 @@
 @layer base {
   html {
     font-size: 16px;
-    scroll-behavior: smooth;
     scrollbar-gutter: stable;
-
   }
 
   [id] {
@@ -16,12 +14,12 @@
     color: var(--foreground);
   }
 
-  @media (prefers-reduced-motion: reduce) {
+  /* @media (prefers-reduced-motion: reduce) {
     html {
       scroll-behavior: auto;
       scrollbar-gutter: stable;
     }
-  }
+  } */
 }
 
 :root {
