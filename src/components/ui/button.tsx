@@ -16,7 +16,7 @@ const buttonVariants = cva(
     variants: {
       variant: {
         Primary:
-          "bg-accent text-background hover:bg-accent-hover active:bg-accent-pressed font-medium",
+          "bg-accent text-on-accent hover:bg-accent-hover active:bg-accent-pressed font-medium",
         Secondary:
           "border border-foreground text-foreground hover:bg-outline-hover hover:text-accent-hover hover:border-accent-hover active:bg-outline-pressed active:text-accent-pressed active:border-accent-pressed font-normal",
         Disabled: "cursor-not-allowed bg-muted-foreground text-background"

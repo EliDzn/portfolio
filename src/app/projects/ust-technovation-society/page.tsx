@@ -87,9 +87,9 @@ export default function BillEasePage() {
             (1.125) but settled on a Minor Third (1.2) as I felt the scaling for
             the heading for the Major Second was too minimal while the Major
             Third occupied too much space and the Minor Third was just the sweet
-            spot for both text-heavy pages and implemeting clear information
+            spot for both text-heavy pages and implementing clear information
             hierarchy. I then developed a reusable button component and its
-            variants, and pushed for Lucide as foundation for the iconograpy to
+            variants, and pushed for Lucide as foundation for the iconography to
             keep the interface visually consistent without building a custom
             icon system and allow for scalability and its easy implementation
             within React for development.
@@ -179,7 +179,7 @@ export default function BillEasePage() {
                 lower-commitment action over pushing them toward a harder one
                 immediately. I also added a second, more direct CTA near the end
                 of the page, so a firmer next step was still available once
-                visitors had actually read through the organization s
+                visitors had actually read through the organization&rsquo;s
                 information and activities.
               </Text>
             </div>
@@ -263,7 +263,7 @@ export default function BillEasePage() {
         >
           <Text variant="body-md" className="text-subtle-foreground">
             After a few months, the finished design was handed off to the
-            devlopmment team of the organization and launched its first official
+            development team of the organization and launched its first official
             website, bringing a cohesive visual identity, a shared design
             system, and various page experiences into one consistent product
             that is still being used today. Working alongside development

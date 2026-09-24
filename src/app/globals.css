@@ -32,7 +32,8 @@
   --accent: oklch(0.703 0.175 46.625);
   --accent-hover: oklch(0.64 0.186 42.908);
   --accent-pressed: oklch(0.5895 0.1705 42.9343);
-
+  --on-accent: oklch(0.987 0.007 106.52);
+  
   --outline-hover: oklch(0.968 0.015 33.071);
   --outline-pressed: oklch(0.942 0.026 32.236);
 }
@@ -56,6 +57,7 @@
   --color-accent: var(--accent);
   --color-accent-hover: var(--accent-hover);
   --color-accent-pressed: var(--accent-pressed);
+  --color-on-accent: var(--on-accent);
 
   --color-outline-hover: var(--outline-hover);
   --color-outline-pressed: var(--outline-pressed);
