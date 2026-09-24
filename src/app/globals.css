@@ -11,15 +11,10 @@
   }
 
   body {
+    background: var(--background);
     color: var(--foreground);
+    font-family: Geist, Helvetica, sans-serif;
   }
-
-  /* @media (prefers-reduced-motion: reduce) {
-    html {
-      scroll-behavior: auto;
-      scrollbar-gutter: stable;
-    }
-  } */
 }
 
 :root {
@@ -33,7 +28,7 @@
   --accent-hover: oklch(0.64 0.186 42.908);
   --accent-pressed: oklch(0.5895 0.1705 42.9343);
   --on-accent: oklch(0.987 0.007 106.52);
-  
+
   --outline-hover: oklch(0.968 0.015 33.071);
   --outline-pressed: oklch(0.942 0.026 32.236);
 }
@@ -47,6 +42,9 @@
 }
 
 @theme inline {
+
+  --font-sans: var(--font-geist-sans), Helvetica, sans-serif;
+
   /* Colors */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -146,10 +144,4 @@
   --spacing-grid-mobile: 1rem;
   --spacing-grid-tablet: 1.25rem;
   --spacing-grid-desktop: 1.5rem;
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Geist, Helvetica, sans-serif;
 }
