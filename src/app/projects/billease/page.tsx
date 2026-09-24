@@ -118,7 +118,7 @@ export default function BillEasePage() {
             navigation, labeling, hierarchy, and content visibility which were
             treated as input for the next iteration to immediately fix.
           </Text>
-          <section className="flex flex-col gap-4 my-6">
+          <section className="flex flex-col gap-4 my-8">
             <div className="w-full flex flex-col lg:flex-row gap-2">
               <div className="relative w-full lg:w-1/2 h-80 md:h-150">
                 <Image
@@ -154,7 +154,7 @@ export default function BillEasePage() {
               </Text>
             </div>
           </section>
-          <section className="flex flex-col gap-4 my-6">
+          <section className="flex flex-col gap-4 my-8">
             <div className="w-full flex flex-col lg:flex-row gap-2">
               <div className="relative w-full lg:w-1/2 h-80 md:h-150">
                 <Image
@@ -194,7 +194,7 @@ export default function BillEasePage() {
               </Text>
             </div>
           </section>
-          <section className="flex flex-col gap-4 my-6">
+          <section className="flex flex-col gap-4 my-8">
             <div className="flex flex-col gap-1">
               <Text as="h3" variant="h3">
                 Clarifying language
@@ -213,7 +213,7 @@ export default function BillEasePage() {
             </div>
           </section>
 
-          <section className="flex flex-col my-6">
+          <section className="flex flex-col my-8">
             <div className="flex flex-col gap-1">
               <Text as="h3" variant="h3">
                 What testing showed

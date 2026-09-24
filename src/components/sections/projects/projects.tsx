@@ -36,8 +36,8 @@ export default function Projects() {
             tags={["Case Study", "Design System"]}
             description="Worked directly under the UI/UX Director to architect our core design system and low-fidelity wireframes. I then oversaw a team of designers through the implementation phase, ensuring all high-fidelity interfaces remained visually consistent and scalable."
             date="2023"
-            image="/images/UST_TechnovationSociety.jpg"
-            link="/projects/billease"
+            image="/images/case-studies/ust-technovation-society/ust-technovation-society-organization.webp"
+            link="/projects/ust-technovation-society"
           />
           {/* <ProjectCard
             title="Achromatic To Do App"

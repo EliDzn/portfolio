@@ -26,7 +26,7 @@ export default function CaseStudySection({
       aria-labelledby={`${id}-heading`}
       className="col-span-full grid grid-cols-subgrid scroll-mt-24 min-h-24"
     >
-      <div className="col-span-full lg:col-start-2 lg:col-span-8 flex flex-col gap-3">
+      <div className="col-span-full lg:col-start-2 lg:col-span-8 flex flex-col gap-4">
         <div className="flex flex-col gap-0.5 text-center">
           <Text variant="caption" as="p" className="text-foreground uppercase">
             {label}

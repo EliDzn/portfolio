@@ -54,7 +54,9 @@ function HeroContent({ title, desc, link }: HeroContentProps) {
 
       {link && (
         <div className="col-span-full my-2 flex justify-start uppercase font-semibold transition-colors duration-150 ease-out hover:text-accent lg:col-span-2 lg:my-0 lg:justify-end">
-          <a href={link}>View project</a>
+          <a href={link} target="_blank">
+            View Live Site ↗︎
+          </a>
         </div>
       )}
     </>
