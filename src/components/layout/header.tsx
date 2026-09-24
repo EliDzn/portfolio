@@ -16,6 +16,11 @@ export default function Header() {
   const isRouteLight = pathname.startsWith("/projects");
   const isLight = isOpen || isRouteLight;
 
+  function clickLogo() {
+    setIsOpen(false);
+    if (pathname === "/") window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
   useEffect(() => {
     const mediaQuery = window.matchMedia("(min-width: 1024px)");
 
@@ -41,7 +46,7 @@ export default function Header() {
       )}
     >
       <Container className="flex h-20 items-center justify-between">
-        <Link href="/">
+        <Link href="/" onClick={clickLogo}>
           <Image
             src="/logo.svg"
             alt="Eli Dizon"
