@@ -21,7 +21,7 @@ export default function Footer({ variant }: FooterProps) {
       </div>
 
       {variant !== "main" && (
-        <div className="data-active:text-foreground data-active:font-medium transition-colors duration-200">
+        <div className="data-active:text-foreground data-active:font-medium transition-colors duration-200 flex flex-col text-center md:flex-row gap-4">
           <Text variant="caption">
             <a href="mailto:elialeandro.dizon@gmail.com">
               elialeandro.dizon@gmail.com
