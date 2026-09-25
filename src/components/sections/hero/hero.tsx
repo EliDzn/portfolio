@@ -33,8 +33,8 @@ export default function Hero() {
           <Button variant="Secondary" asChild>
             <a
               href="/Eli_Aleandro_Dizon_Resume.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
+              // target="_blank"
+              // rel="noopener noreferrer"
             >
               Download Resume
             </a>
