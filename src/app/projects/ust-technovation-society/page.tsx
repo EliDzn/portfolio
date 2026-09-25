@@ -306,9 +306,9 @@ export default function BillEasePage() {
             implementation process doing exactly what it should, testing the
             design against reality and adjusting.
           </Text>
+          <CaseStudyLiveSite href="https://www.usttechsoc.org/" />
         </CaseStudySection>
       </CaseStudyBody>
-      <CaseStudyLiveSite href="https://www.usttechsoc.org/" />
     </CaseStudyLayout>
   );
 }

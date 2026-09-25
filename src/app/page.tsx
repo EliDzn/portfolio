@@ -5,6 +5,7 @@ import About from "@/components/sections/about/about";
 import Expertise from "@/components/sections/expertise/expertise";
 import Projects from "@/components/sections/projects/projects";
 import Philosophy from "@/components/sections/philosophy/philosophy";
+import Footer from "@/components/layout/footer";
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
         <Expertise />
         <Contact />
       </PageGrid>
+      <Footer variant="main" />
     </>
   );
 }

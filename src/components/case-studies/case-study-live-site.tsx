@@ -6,12 +6,17 @@ type LiveSiteProps = {
 
 export default function CaseStudyLiveSite({ href }: LiveSiteProps) {
   return (
-    <div className="col-span-full flex justify-center my-10">
-      <Button variant="Primary" className="w-full md:w-4/5" asChild>
-        <a href={href} target="_blank" rel="noopener noreferrer">
+    <section className="col-span-full flex justify-center my-10">
+      <Button variant="Primary" className="w-full" asChild>
+        <a
+          href={href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="w-full"
+        >
           View Live Site
         </a>
       </Button>
-    </div>
+    </section>
   );
 }

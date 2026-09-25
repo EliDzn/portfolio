@@ -43,12 +43,6 @@ export default function Contact() {
           </a>
         </div>
       </div>
-
-      <div className="col-span-full row-start-3">
-        <Text variant="caption" className="text-center py-4">
-          © {new Date().getFullYear()}, Eli Aleandro M. Dizon
-        </Text>
-      </div>
     </section>
   );
 }
