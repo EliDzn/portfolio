@@ -3,6 +3,7 @@ import Button from "../../ui/button";
 import CylinderText from "./cylinder-text/cylinder-text";
 import SocialLinks from "./social-links";
 import RotatingText from "./cylinder-text/rotating-text";
+import ExternalLink from "@/components/ui/external-link";
 
 export default function Hero() {
   const roles = ["Fullstack Developer", "Design Engineer", "Builder"];
@@ -31,13 +32,9 @@ export default function Hero() {
 
         <div className="col-span-4 mt-4 flex flex-row flex-wrap gap-2 lg:col-start-9 lg:col-span-4 lg:mt-0 md:justify-end">
           <Button variant="Secondary" asChild>
-            <a
-              href="/Eli_Aleandro_Dizon_Resume.pdf"
-              // target="_blank"
-              // rel="noopener noreferrer"
-            >
+            <ExternalLink href="/Eli_Aleandro_Dizon_Resume.pdf">
               Download Resume
-            </a>
+            </ExternalLink>
           </Button>
 
           <Button variant="Primary" asChild>
