@@ -107,7 +107,7 @@ export default function Preloader({
         >
           0
         </span>
-        <p className="absolute left-1/2 top-[calc(100%+1rem)] -translate-x-1/2 whitespace-nowrap text-center text-h4-desktop font-medium text-background">
+        <p className="absolute left-1/2 top-[calc(100%+1rem)] -translate-x-1/2 whitespace-nowrap text-center md:text-h4-desktop text-body-lg-tablet font-medium text-background">
           Setting things in motion...
         </p>
       </div>

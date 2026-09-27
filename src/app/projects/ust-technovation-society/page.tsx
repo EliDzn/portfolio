@@ -99,7 +99,7 @@ export default function BillEasePage() {
               The brief and this early foundation work converged on three
               priorities that shaped every page-level decision that followed:
             </Text>
-            <ol className="list-decimal pl-4 text-subtle-foreground gap-0">
+            <ol className="list-decimal pl-6 text-subtle-foreground gap-0">
               <li>
                 <Text variant="body-md">
                   <span className="text-foreground font-medium">

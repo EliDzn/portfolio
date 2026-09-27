@@ -53,10 +53,9 @@ export default function MobileNav({ isOpen, onToggle }: MobileNavProps) {
         aria-controls="mobile-navigation"
         onClick={toggleMenu}
         className={cn(
-          "relative z-30 flex size-9 items-center justify-center",
+          "relative z-30 flex size-9 items-center justify-center text-foreground",
           "hover:text-accent hover:cursor-pointer",
-          "transition-colors duration-150 ease-out",
-          isOpen ? "text-background" : "text-foreground"
+          "transition-colors duration-150 ease-out"
         )}
       >
         <svg
