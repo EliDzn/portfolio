@@ -29,13 +29,21 @@ export default function Footer({ variant }: FooterProps) {
           </Text>
 
           <Text variant="caption">
-            <a href="https://linkedin.com" target="_blank" rel="noreferrer">
+            <a
+              href="https://linkedin.com/in/eli-dizon"
+              target="_blank"
+              rel="noreferrer"
+            >
               LinkedIn
             </a>
           </Text>
 
           <Text variant="caption">
-            <a href="https://github.com" target="_blank" rel="noreferrer">
+            <a
+              href="https://github.com/EliDzn"
+              target="_blank"
+              rel="noreferrer"
+            >
               GitHub
             </a>
           </Text>
