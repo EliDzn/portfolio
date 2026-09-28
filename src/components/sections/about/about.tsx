@@ -7,6 +7,7 @@ export default function About() {
     "HTML5",
     "CSS3",
     "JavaScript",
+    "Typescript",
     "React",
     "Next.js",
     "Node.js",

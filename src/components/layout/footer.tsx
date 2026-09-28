@@ -8,7 +8,7 @@ type FooterProps = {
 const footerVariants = {
   main: "flex justify-center items-center py-6 text-center",
   "case-study":
-    "flex flex-col-reverse md:flex-row justify-between items-center py-2 md:py-4 border-t border-muted-foreground text-subtle-foreground"
+    "flex flex-col-reverse md:flex-row justify-between items-center py-4 border-t border-muted-foreground text-subtle-foreground"
 };
 
 export default function Footer({ variant }: FooterProps) {
@@ -21,7 +21,7 @@ export default function Footer({ variant }: FooterProps) {
       </div>
 
       {variant !== "main" && (
-        <div className="data-active:text-foreground data-active:font-medium transition-colors duration-200 flex flex-col text-center md:flex-row gap-2 mt-2 md:mt-0 md:gap-4">
+        <div className="transition-colors duration-200 flex flex-col text-center md:flex-row gap-2 md:gap-4">
           <Text variant="caption">
             <a href="mailto:elialeandro.dizon@gmail.com">
               elialeandro.dizon@gmail.com
@@ -53,7 +53,7 @@ export default function Footer({ variant }: FooterProps) {
   );
 
   return (
-    <footer className="data-active:text-foreground data-active:font-medium transition-colors duration-200">
+    <footer>
       {variant === "case-study" ? (
         <Container>
           <div className={footerVariants["case-study"]}>{content}</div>

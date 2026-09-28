@@ -20,22 +20,16 @@ export default function Projects() {
           <ProjectCard
             title="BillEase: Invoicing App"
             tags={["Case Study", "Design System"]}
-            description="Independently drove the entire product lifecycle and designed end-to-end using a strict mobile-first approach to simplify billing and inventory pipelines for on-the-go freelancers and small businesses."
-            date="2023"
+            description="Designed a mobile-first invoicing and inventory app for freelancers and small businesses, validated across 3 usability rounds, with 15 sessions and 70 task attempts with 100% task completion."
+            date="August 2025"
             image="/images/case-studies/billease/BillEase.webp"
             link="/projects/billease"
           />
-          {/* <ProjectCard
-            title="Beautox"
-            tags={["Node.js", "Express"]}
-            description="A RESTful API built with Node.js and Express."
-            date="2023"
-          /> */}
           <ProjectCard
             title="UST Technovation Society Website"
             tags={["Case Study", "Design System"]}
             description="Worked directly under the UI/UX Director to architect our core design system and low-fidelity wireframes. I then oversaw a team of designers through the implementation phase, ensuring all high-fidelity interfaces remained visually consistent and scalable."
-            date="2023"
+            date="December 2025"
             image="/images/case-studies/ust-technovation-society/ust-technovation-society-organization.webp"
             link="/projects/ust-technovation-society"
           />

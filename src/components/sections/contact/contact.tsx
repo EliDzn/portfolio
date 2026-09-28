@@ -26,7 +26,7 @@ export default function Contact() {
             Email
           </a>
           <a
-            href="https://linkedin.com"
+            href="https://linkedin.com/in/eli-dizon"
             target="_blank"
             rel="noopener noreferrer"
             className="text-body-md-desktop"
