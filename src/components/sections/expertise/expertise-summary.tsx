@@ -36,7 +36,8 @@ export default function ExpertiseSummary({
       "
     >
       <summary className="list-none [&::-webkit-details-marker]:hidden">
-        <div className="group/summary flex cursor-pointer items-center gap-4">
+        <div className="group/summary flex cursor-pointer items-center gap-4 [transform:translateZ(0)]">
+          {" "}
           <Text
             variant="body-md"
             className="
@@ -48,7 +49,6 @@ export default function ExpertiseSummary({
           >
             [{String(index).padStart(2, "0")}]
           </Text>
-
           <Text
             as="h3"
             variant="h3"
