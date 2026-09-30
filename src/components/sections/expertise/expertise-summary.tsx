@@ -28,16 +28,16 @@ export default function ExpertiseSummary({
         details-content:overflow-hidden
         details-content:opacity-0
         details-content:transition-[height,opacity,content-visibility]
+        details-content:transition-discrete
         details-content:duration-300
         details-content:ease-out
-        details-content:transition-discrete
         open:details-content:h-auto
         open:details-content:opacity-100
+        overflow-anchor-none
       "
     >
       <summary className="list-none [&::-webkit-details-marker]:hidden">
-        <div className="group/summary flex cursor-pointer items-center gap-4 [transform:translateZ(0)]">
-          {" "}
+        <div className="group/summary flex cursor-pointer items-center gap-4 transform-[translateZ(0)]">
           <Text
             variant="body-md"
             className="

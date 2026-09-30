@@ -98,7 +98,7 @@ export default function About() {
             </Text>
             <div className="flex flex-col gap-2">
               {Technologies.map((tech) => (
-                <p key={tech} className="text-body-lg-desktop font-medium">
+                <p key={tech} className="text-body-lg-desktop ">
                   {tech}
                 </p>
               ))}
