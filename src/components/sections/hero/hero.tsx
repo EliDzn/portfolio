@@ -2,7 +2,7 @@ import Text from "../../ui/typography";
 import Button from "../../ui/button";
 import SocialLinks from "./social-links";
 import RotatingText from "./rotating-text";
-import DynamicCylinder from "./cylinder-text/dynamic-cylinder";
+import CylinderText from "./cylinder-text/cylinder-text";
 
 export default function Hero() {
   const roles = ["Fullstack Developer", "Design Engineer", "Builder"];
@@ -13,7 +13,7 @@ export default function Hero() {
       className="relative col-span-full grid min-h-screen grid-cols-subgrid grid-rows-[1fr_auto] gap-y-8"
     >
       <div className="pointer-events-none absolute inset-0 grid grid-rows-1 grid-cols-4 gap-(--spacing-grid-mobile) md:grid-cols-8 md:gap-(--spacing-grid-tablet) lg:grid-cols-12 lg:gap-(--spacing-grid-desktop)">
-        <DynamicCylinder />
+        <CylinderText className="col-span-4 self-center justify-self-center md:col-start-3 lg:col-start-5" />
       </div>
 
       <div className="col-span-full row-start-2 mb-8 grid grid-cols-subgrid items-end">
