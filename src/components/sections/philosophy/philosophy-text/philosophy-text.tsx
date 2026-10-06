@@ -11,7 +11,7 @@ import styles from "./philosophy-text.module.css";
 gsap.registerPlugin(ScrollTrigger, SplitText, useGSAP);
 
 const text =
-  "I like seeing an idea go all the way from a blank Figma canvas to something real, and doing both myself means it never has to lose something along the way";
+  "I like owning an idea go all the way from a concept to something real, and doing both myself means it never has to lose something along the way";
 
 // "Creativity is most valuable when it serves a purpose, and not just to make something work or look good, but to understand why it should exist that way in the first place. A great design should make you wonder how someone thought of it, then make you realize why it had to be that way. "
 
