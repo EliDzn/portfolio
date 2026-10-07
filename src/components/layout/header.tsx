@@ -46,7 +46,13 @@ export default function Header() {
       )}
     >
       <Container className="flex h-20 items-center justify-between">
-        <Link href="/" onClick={clickLogo}>
+        <Link
+          href="/"
+          onClick={clickLogo}
+          transitionTypes={
+            pathname.startsWith("/projects") ? ["project-back"] : undefined
+          }
+        >
           <Image
             src="/logo.svg"
             alt="Eli Dizon"

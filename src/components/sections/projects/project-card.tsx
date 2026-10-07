@@ -25,6 +25,7 @@ export default function ProjectCard({
     <Link
       type="button"
       data-project-card
+      transitionTypes={["project-forward"]}
       className="group relative flex h-full cursor-pointer flex-col items-start justify-start overflow-hidden p-6 text-left transition-colors duration-200 ease-out focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent lg:p-9 min-h-160"
       href={link}
     >
