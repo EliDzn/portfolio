@@ -19,6 +19,7 @@ import {
   SRGBColorSpace
 } from "three";
 import Text from "@/components/ui/typography";
+import { useMediaQuery } from "@/hooks/use-media-query";
 
 // "- THE FAMILIAR, REIMAGINED - THE FAMILIAR, REIMAGINED ";
 // "- THOUGHTFUL JUDGEMENT, SPARKING CURIOSITY "
@@ -107,8 +108,9 @@ function Cylinder({
   fontFamily,
   fontWeight,
   color,
-  backColor
-}: Metrics) {
+  backColor,
+  prefersReducedMotion
+}: Metrics & { prefersReducedMotion: boolean }) {
   const groupRef = useRef<Group>(null);
   const { viewport, size, gl } = useThree();
 
@@ -149,7 +151,10 @@ function Cylinder({
   }, [glyphTextures, fontSizePx, pxToUnit, viewport.width]);
 
   useFrame((_, delta) => {
-    if (!groupRef.current) return;
+    if (!groupRef.current || prefersReducedMotion) {
+      return;
+    }
+
     const dt = Math.min(delta, MAX_DELTA);
     groupRef.current.rotation.y -= (dt * Math.PI * 2) / ROTATION_SECONDS;
   });
@@ -207,6 +212,9 @@ export default function CylinderText({ className }: { className?: string }) {
   const mutedProbeRef = useRef<HTMLSpanElement>(null);
   const [metrics, setMetrics] = useState<Metrics | null>(null);
   const [isVisible, setIsVisible] = useState(false);
+  const prefersReducedMotion = useMediaQuery(
+    "(prefers-reduced-motion: reduce)"
+  );
 
   useLayoutEffect(() => {
     const probe = probeRef.current;
@@ -281,11 +289,14 @@ export default function CylinderText({ className }: { className?: string }) {
             dpr={[1, 2]}
             gl={{ alpha: true, antialias: true }}
             camera={{ position: [0, 0, 5], fov: 35 }}
-            frameloop={isVisible ? "always" : "never"}
+            frameloop={isVisible && !prefersReducedMotion ? "always" : "demand"}
             style={{ pointerEvents: "none" }}
           >
             <Suspense fallback={null}>
-              <Cylinder {...metrics} />
+              <Cylinder
+                {...metrics}
+                prefersReducedMotion={prefersReducedMotion}
+              />
             </Suspense>
           </Canvas>
         )}

@@ -29,37 +29,54 @@ export default function Preloader({
       return;
     }
 
-    const timeline = gsap.timeline();
+    const updateProgress = () => {
+      const value = Math.round(progress.current.value);
 
-    timeline
-      .to(progress.current, {
-        value: 100,
-        duration,
-        ease: "none",
-        onUpdate: () => {
-          const value = Math.round(progress.current.value);
+      if (numberRef.current) {
+        numberRef.current.textContent = String(value);
+      }
 
-          if (numberRef.current) {
-            numberRef.current.textContent = String(value);
-          }
+      if (circleRef.current) {
+        circleRef.current.style.strokeDashoffset = String(
+          CIRCUMFERENCE * (1 - progress.current.value / 100)
+        );
+      }
+    };
 
-          if (circleRef.current) {
-            circleRef.current.style.strokeDashoffset = String(
-              CIRCUMFERENCE * (1 - progress.current.value / 100)
-            );
-          }
-        }
-      })
-      .to(container, {
-        yPercent: 100,
-        duration: 0.8,
-        ease: "power4.inOut",
-        delay: 0.2,
-        onComplete
-      });
+    const mm = gsap.matchMedia();
+
+    mm.add("(prefers-reduced-motion: no-preference)", () => {
+      const timeline = gsap
+        .timeline()
+        .to(progress.current, {
+          value: 100,
+          duration,
+          ease: "none",
+          onUpdate: updateProgress
+        })
+        .to(container, {
+          yPercent: 100,
+          duration: 0.8,
+          ease: "power4.inOut",
+          delay: 0.2,
+          onComplete
+        });
+
+      return () => {
+        timeline.kill();
+      };
+    });
+
+    mm.add("(prefers-reduced-motion: reduce)", () => {
+      progress.current.value = 100;
+      updateProgress();
+
+      gsap.set(container, { yPercent: 100 });
+      onComplete();
+    });
 
     return () => {
-      timeline.kill();
+      mm.revert();
     };
   }, [duration, onComplete]);
 

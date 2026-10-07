@@ -28,60 +28,76 @@ export default function RotatingText({
       if (!words.length) return;
 
       const elements = wordsRef.current;
+      const mm = gsap.matchMedia();
 
-      gsap.set(elements, {
-        yPercent: 100,
-        opacity: 0
-      });
-
-      gsap.set(elements[0], {
-        yPercent: 0,
-        opacity: 1
-      });
-
-      let currentIndex = 0;
-      let timer: gsap.core.Tween | null = null;
-
-      const rotate = () => {
-        const current = elements[currentIndex];
-        const nextIndex = (currentIndex + 1) % elements.length;
-        const next = elements[nextIndex];
-
-        gsap.set(next, {
+      const showFirstWord = () => {
+        gsap.set(elements, {
           yPercent: 100,
           opacity: 0
         });
 
-        gsap
-          .timeline()
-          .to(current, {
-            yPercent: -100,
-            opacity: 0,
-            duration,
-            ease: "power3.inOut"
-          })
-          .to(
-            next,
-            {
-              yPercent: 0,
-              opacity: 1,
-              duration,
-              ease: "power3.inOut"
-            },
-            "<"
-          );
-
-        currentIndex = nextIndex;
-
-        timer = gsap.delayedCall(interval / 1000, rotate);
+        gsap.set(elements[0], {
+          yPercent: 0,
+          opacity: 1
+        });
       };
 
-      if (words.length > 1) {
+      mm.add("(prefers-reduced-motion: no-preference)", () => {
+        showFirstWord();
+
+        if (words.length <= 1) {
+          return;
+        }
+
+        let currentIndex = 0;
+        let timer: gsap.core.Tween | null = null;
+
+        const rotate = () => {
+          const current = elements[currentIndex];
+          const nextIndex = (currentIndex + 1) % elements.length;
+          const next = elements[nextIndex];
+
+          gsap.set(next, {
+            yPercent: 100,
+            opacity: 0
+          });
+
+          gsap
+            .timeline()
+            .to(current, {
+              yPercent: -100,
+              opacity: 0,
+              duration,
+              ease: "power3.inOut"
+            })
+            .to(
+              next,
+              {
+                yPercent: 0,
+                opacity: 1,
+                duration,
+                ease: "power3.inOut"
+              },
+              "<"
+            );
+
+          currentIndex = nextIndex;
+          timer = gsap.delayedCall(interval / 1000, rotate);
+        };
+
         timer = gsap.delayedCall(interval / 1000, rotate);
-      }
+
+        return () => {
+          timer?.kill();
+        };
+      });
+
+      mm.add("(prefers-reduced-motion: reduce)", () => {
+        showFirstWord();
+      });
 
       return () => {
-        timer?.kill();
+        mm.revert();
       };
     },
     {

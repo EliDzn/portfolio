@@ -33,52 +33,66 @@ export default function IntentText({ className }: IntentTextProps) {
         return;
       }
 
-      const split = SplitText.create(textRef.current, {
-        type: "words,chars",
-        wordsClass: styles.word,
-        charsClass: styles.character
+      const mm = gsap.matchMedia();
+
+      mm.add("(prefers-reduced-motion: no-preference)", () => {
+        const split = SplitText.create(textRef.current!, {
+          type: "words,chars",
+          wordsClass: styles.word,
+          charsClass: styles.character
+        });
+
+        const timeline = gsap.timeline({
+          scrollTrigger: {
+            trigger: scopeRef.current,
+            start: "top 90%",
+            end: "top 10%",
+            scrub: 0.1,
+            invalidateOnRefresh: true
+          }
+        });
+
+        gsap.set(split.chars, {
+          color: "var(--muted-foreground)"
+        });
+
+        split.chars.forEach((character, index) => {
+          const startTime = index * 0.025;
+
+          timeline
+            .to(
+              character,
+              {
+                color: "var(--accent)",
+                duration: 0.18,
+                ease: "none"
+              },
+              startTime
+            )
+            .to(
+              character,
+              {
+                color: "var(--foreground)",
+                duration: 0.24,
+                ease: "none"
+              },
+              startTime + 0.9
+            );
+        });
+
+        return () => {
+          split.revert();
+        };
       });
 
-      const timeline = gsap.timeline({
-        scrollTrigger: {
-          trigger: scopeRef.current,
-          start: "top 90%",
-          end: "top 10%",
-          scrub: 0.1,
-          invalidateOnRefresh: true
-        }
-      });
-
-      gsap.set(split.chars, {
-        color: "var(--muted-foreground)"
-      });
-
-      split.chars.forEach((character, index) => {
-        const startTime = index * 0.025;
-
-        timeline
-          .to(
-            character,
-            {
-              color: "var(--accent)",
-              duration: 0.18,
-              ease: "none"
-            },
-            startTime
-          )
-          .to(
-            character,
-            {
-              color: "var(--foreground)",
-              duration: 0.24,
-              ease: "none"
-            },
-            startTime + 0.9
-          );
+      mm.add("(prefers-reduced-motion: reduce)", () => {
+        gsap.set(textRef.current, {
+          color: "var(--foreground)"
+        });
       });
 
       return () => {
-        split.revert();
+        mm.revert();
       };
     },
     {
@@ -87,7 +101,7 @@ export default function IntentText({ className }: IntentTextProps) {
   );
 
   return (
-    <div ref={scopeRef} className={`${styles.viewport} ${className ?? ""}`}>
+    <div ref={scopeRef} className={`${styles.viewport} ${className}`}>
       <Text as="p" variant="body-lg" className="sr-only">
         {text}
       </Text>
