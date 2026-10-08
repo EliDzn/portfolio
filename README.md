@@ -1,47 +1,40 @@
 # Eli Dizon Portfolio
 
-My personal porfolio fullstack developer and design engineer building thoughtful digital experiences with React, TypeScript, and modern web technologies.
+My personal portfolio highlights both design and development expertise while building thoughtful digital experiences with React, TypeScript, and modern web technologies.
 
-## 🌐 Live Portfolio
+Credits for design inspiration go to:
 
-[Visit elidizon.vercel.app](https://elidizon.vercel.app/)
+- [SpaceTypeGenerator](https://spacetypegenerator.com/)
+- [shadcn.io components](https://shadcn.io/)
+- [Osmo Supply](https://www.osmo.supply/preview?resource=gradient-wave-text-on-scroll)
+- [A24](https://a24films.com/)
+
+## Live Portfolio
+
+[elidizon.vercel.app](https://elidizon.vercel.app/)
 
 ## Screenshot
 
-![Eli Dizon portfolio preview](./docs/portfolio-preview.png)
+![Eli Dizon portfolio preview](./public/images/portfolio-preview.webp)
 
 ## Tech Stack
 
-[![Tech Stack](https://skillicons.dev/icons?i=nextjs,react,ts,tailwind,threejs,gsap,vercel)](https://skillicons.dev)
+[![Tech Stack](https://skillicons.dev/icons?i=ts,react,nextjs,tailwind,threejs,vercel)](https://skillicons.dev)
 
-- Next.js 16
-- React 19
 - TypeScript
+- React 19
+- Next.js 16
 - Tailwind CSS 4
 - Three.js
-- React Three Fiber
 - GSAP
 - Vercel
 
 ## Features
 
-- Responsive portfolio homepage
-- Hero section with animated typography
-- Interactive Three.js cylinder text
+- Reduced initial JavaScript transfer by ~200 kB by moving Three.js/React Three Fiber runtime into a separate dynamically loaded bundle
+- Achieved 100/100 Lighthouse Performance, Best Practices, and SEO scores with 96/100 Accessibility, optimized to 0.5s LCP, 50ms TBT, and 0 CLS
+- Three.js cylinder text
 - Scroll-based philosophy text animation
-- Project cards with animated hover states
-- BillEase case study
-- UST Technovation Society case study
-- Responsive mobile navigation
-- Case-study section timeline navigation
-- Resume download
-- LinkedIn and GitHub links
-- SEO metadata, sitemap, and robots configuration
-- View Transitions for project navigation
-- Reduced-motion support for GSAP, Three.js, and CSS animations
-- Optimized images with `next/image`
-- React Compiler enabled
-- Optional bundle analysis
 
 ## Project Structure
 
