@@ -64,10 +64,53 @@ src/
 - Node.js 20.9 or later
 - npm
 
-### Installation
+## Installation
 
 ```bash
 git clone https://github.com/EliDzn/eli-dizon-portfolio.git
 cd eli-dizon-portfolio
 npm install
 ```
+
+## Development
+
+```bash
+npm run dev
+```
+
+Open http://localhost:3000 in your browser.
+
+## Lint
+
+```bash
+npm run lint
+```
+
+## Production Build
+
+```bash
+npm run build
+npm run start
+```
+
+## Bundle Analysis
+
+```bash
+npm run analyze
+```
+
+## Deployment
+
+### Vercel
+
+1. Import the repository into [Vercel](https://vercel.com/).
+2. Select **Next.js** as the framework.
+3. Use `npm install` as the install command.
+4. Use `npm run build` as the build command.
+5. Deploy the project.
+
+Vercel detects the Next.js configuration automatically.
+
+## License
+
+This project is licensed under the terms in the [LICENSE](./LICENSE).
