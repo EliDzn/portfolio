@@ -41,7 +41,7 @@ export default function Header() {
     <header
       data-theme={isLight ? "dark" : undefined}
       className={cn(
-        "fixed z-30 w-full transition-colors duration-300 bg-transparent",
+        "fixed z-30 w-full transition-colors duration-300",
         isOpen ? "backdrop-blur-none" : "backdrop-blur-xs"
       )}
     >
@@ -67,10 +67,14 @@ export default function Header() {
         </Link>
 
         <div className="hidden lg:block">
-          <Navbar />
+          <Navbar isProjectPage={isRouteLight} />
         </div>
 
-        <MobileNav isOpen={isOpen} onToggle={setIsOpen} />
+        <MobileNav
+          isOpen={isOpen}
+          onToggle={setIsOpen}
+          isProjectPage={isRouteLight}
+        />
       </Container>
     </header>
   );

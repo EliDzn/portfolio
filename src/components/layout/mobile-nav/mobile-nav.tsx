@@ -15,7 +15,11 @@ const links = [
   { href: "/Eli_Aleandro_Dizon_Resume.pdf", label: "Resume", type: "pdf" }
 ] as const;
 
-type MobileNavProps = { isOpen: boolean; onToggle: (open: boolean) => void };
+type MobileNavProps = {
+  isOpen: boolean;
+  onToggle: (open: boolean) => void;
+  isProjectPage: boolean;
+};
 
 function subscribe() {
   return () => {};
@@ -29,12 +33,18 @@ function getServerSnapshot() {
   return false;
 }
 
-export default function MobileNav({ isOpen, onToggle }: MobileNavProps) {
+export default function MobileNav({
+  isOpen,
+  onToggle,
+  isProjectPage
+}: MobileNavProps) {
   const mounted = useSyncExternalStore(
     subscribe,
     getClientSnapshot,
     getServerSnapshot
   );
+
+  const transitionTypes = isProjectPage ? ["project-back"] : undefined;
 
   function toggleMenu() {
     onToggle(!isOpen);
@@ -81,6 +91,7 @@ export default function MobileNav({ isOpen, onToggle }: MobileNavProps) {
           />
         </svg>
       </button>
+
       {mounted &&
         createPortal(
           <nav
@@ -107,6 +118,7 @@ export default function MobileNav({ isOpen, onToggle }: MobileNavProps) {
                         href={link.href}
                         onClick={closeMenu}
                         tabIndex={isOpen ? 0 : -1}
+                        transitionTypes={transitionTypes}
                         className="block pr-2 text-h1-mobile font-medium uppercase transition-colors hover:text-accent-hover"
                       >
                         {link.label}

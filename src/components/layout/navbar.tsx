@@ -22,17 +22,27 @@ const MenuLink = ({ href, children, ...rest }: MenuLinkProps) => {
   );
 };
 
-export default function Navbar() {
+export default function Navbar({ isProjectPage }: { isProjectPage: boolean }) {
+  const transitionTypes = isProjectPage ? ["project-back"] : undefined;
+
   return (
     <nav>
       <ul className="flex flex-row gap-6">
-        <MenuLink href="/#projects">Projects</MenuLink>
-        <MenuLink href="/#about">About</MenuLink>
-        <MenuLink href="/#expertise">Expertise</MenuLink>
-        <MenuLink href="/#contact">Contact</MenuLink>
+        <MenuLink href="/#projects" transitionTypes={transitionTypes}>
+          Projects
+        </MenuLink>
+        <MenuLink href="/#about" transitionTypes={transitionTypes}>
+          About
+        </MenuLink>
+        <MenuLink href="/#expertise" transitionTypes={transitionTypes}>
+          Expertise
+        </MenuLink>
+        <MenuLink href="/#contact" transitionTypes={transitionTypes}>
+          Contact
+        </MenuLink>
         <li>
           <a
-            href="/Eli_Aleandro_Dizon_Resume.pdf"
+            href="/Eli_Alejandro_Dizon_Resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="uppercase font-semibold text-foreground transition-colors duration-150 ease-out hover:text-accent"
