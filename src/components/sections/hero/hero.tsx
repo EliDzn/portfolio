@@ -46,6 +46,39 @@ export default function Hero() {
           </Button>
         </div>
       </div>
+
+      {/* Center div */}
+      {/* <div className="col-span-full row-start-2 mb-8 flex flex-col items-center text-center">
+        <div className="w-full">
+          <Text as="h1" variant="h1">
+            I’m Eli, a <RotatingText words={roles} className="text-accent" />
+          </Text>
+          <div className="w-full flex justify-center">
+            <SocialLinks />
+          </div>
+
+          <Text variant="body-lg" className="text-muted-foreground">
+            I turn complex problems into simple, thoughtful experiences,
+            bridging design and engineering from Figma to production.
+          </Text>
+
+          <div className="mt-4 flex flex-row flex-wrap justify-center gap-2">
+            <Button variant="Secondary" asChild>
+              <a
+                href="/Eli_Aleandro_Dizon_Resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Download Resume
+              </a>
+            </Button>
+
+            <Button variant="Primary" asChild>
+              <a href="#projects">See My Work</a>
+            </Button>
+          </div>
+        </div>
+      </div> */}
     </section>
   );
 }

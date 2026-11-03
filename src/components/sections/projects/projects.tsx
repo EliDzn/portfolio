@@ -1,4 +1,5 @@
 import Text from "../../ui/typography";
+import { projects } from "@/data/projects";
 import ProjectCard from "./project-card";
 import ProjectGrid from "./project-grid";
 
@@ -16,29 +17,23 @@ export default function Projects() {
         >
           Curated Work
         </Text>
+
         <ProjectGrid>
-          <ProjectCard
-            title="BillEase: Invoicing App"
-            tags={["Case Study", "Design System"]}
-            description="Designed a mobile-first invoicing and inventory app for freelancers and small businesses, validated across 3 usability rounds, with 15 sessions and 70 task attempts with 100% task completion."
-            date="August 2025"
-            image="/images/case-studies/billease/BillEase.webp"
-            link="/projects/billease"
-          />
-          <ProjectCard
-            title="UST Technovation Society Website"
-            tags={["Case Study", "Design System"]}
-            description="Worked directly under the UI/UX Director to architect our core design system and low-fidelity wireframes. I then oversaw a team of designers through the implementation phase, ensuring all high-fidelity interfaces remained visually consistent and scalable."
-            date="December 2025"
-            image="/images/case-studies/ust-technovation-society/ust-technovation-society-organization.webp"
-            link="/projects/ust-technovation-society"
-          />
-          {/* <ProjectCard
-            title="Achromatic To Do App"
-            tags={["React", "Vite"]}
-            description="Small React Web Application for keeping track of your tasks and to-do lists"
-            date="2023"
-          /> */}
+          {projects.map((project) => {
+            return (
+              <ProjectCard
+                key={project.slug}
+                title={project.title}
+                discipline={project.meta.discipline}
+                description={project.cardDescription}
+                projectType={project.projectType}
+                date={project.meta.dates.endDate}
+                image={project.image.src}
+                imageAlt={project.image.alt}
+                link={`/projects/${project.slug}`}
+              />
+            );
+          })}
         </ProjectGrid>
       </div>
     </section>

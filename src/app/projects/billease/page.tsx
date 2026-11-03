@@ -4,39 +4,14 @@ import CaseStudyBody from "@/components/case-studies/case-study-body";
 import CaseStudySection from "@/components/case-studies/case-study-section";
 import Text from "@/components/ui/typography";
 import Image from "next/image";
+import { getProjectBySlug } from "@/data/projects";
 
 export default function BillEasePage() {
-  const metaData = [
-    {
-      label: "Discipline",
-      values: ["UI/UX Design", "Web Design", "Design Systems"]
-    },
-    {
-      label: "Role",
-      values: ["UI/UX Designer"]
-    },
-    {
-      label: "Timeline",
-      values: ["August 2025"]
-    },
-    {
-      label: "Tech Stack",
-      values: ["Figma"]
-    }
-  ];
+  const project = getProjectBySlug("billease");
+
   return (
     <CaseStudyLayout>
-      <CaseStudyHero
-        image={{
-          src: "/images/case-studies/billease/BillEase.webp",
-          alt: "BillEase centralized invoice app"
-        }}
-        content={{
-          title: "BillEase: Centralized Invoice App",
-          desc: "A centralized invoicing experience designed to reduce the effort of managing invoices, clients, and products or services across separate tools."
-        }}
-        meta={metaData}
-      />
+      <CaseStudyHero project={project} />
       <CaseStudyBody>
         <CaseStudySection
           id="problem"

@@ -5,40 +5,13 @@ import CaseStudySection from "@/components/case-studies/case-study-section";
 import CaseStudyLiveSite from "@/components/case-studies/case-study-live-site";
 import Text from "@/components/ui/typography";
 import Image from "next/image";
+import { getProjectBySlug } from "@/data/projects";
 
 export default function BillEasePage() {
-  const metaData = [
-    {
-      label: "Discipline",
-      values: ["UI/UX Design", "Web Design", "Design Systems"]
-    },
-    {
-      label: "Role",
-      values: ["Executive Associate to the Director for UI/UX Design"]
-    },
-    {
-      label: "Timeline",
-      values: ["October 2025 - December 2025"]
-    },
-    {
-      label: "Tech Stack",
-      values: ["Figma"]
-    }
-  ];
+  const project = getProjectBySlug("ust-technovation-society");
   return (
     <CaseStudyLayout>
-      <CaseStudyHero
-        image={{
-          src: "/images/case-studies/ust-technovation-society/ust-technovation-society-hero.webp",
-          alt: "UST Technovation Society Organization Website"
-        }}
-        content={{
-          title: "UST Technovation Society Website",
-          desc: "A digital platform for UST Technovation Society, connecting students through technology, community, events, and initiatives.",
-          link: "https://www.usttechsoc.org/"
-        }}
-        meta={metaData}
-      />
+      <CaseStudyHero project={project} />
       <CaseStudyBody>
         <CaseStudySection
           id="problem"

@@ -1,27 +1,17 @@
 import Image from "next/image";
 
 import Text from "@/components/ui/typography";
+import { type Project } from "@/data/projects";
 
-type HeroImageProps = {
-  src: string;
-  alt: string;
-};
+type HeroImageProps = Project["image"];
 
-type HeroContentProps = {
-  title: string;
-  desc: string;
-  link?: string;
-};
-
-type HeroMetaProps = {
+type HeroMetaItem = {
   label: string;
   values: string[];
 };
 
 type CaseStudyHeroProps = {
-  image: HeroImageProps;
-  content: HeroContentProps;
-  meta: HeroMetaProps[];
+  project: Project;
 };
 
 function HeroImage({ src, alt }: HeroImageProps) {
@@ -39,7 +29,15 @@ function HeroImage({ src, alt }: HeroImageProps) {
   );
 }
 
-function HeroContent({ title, desc, link }: HeroContentProps) {
+function HeroContent({
+  title,
+  description,
+  link
+}: {
+  title: string;
+  description: string;
+  link?: string;
+}) {
   return (
     <>
       <div className="col-span-full flex flex-col lg:col-span-10">
@@ -48,13 +46,13 @@ function HeroContent({ title, desc, link }: HeroContentProps) {
         </Text>
 
         <Text variant="caption" className="text-subtle-foreground">
-          {desc}
+          {description}
         </Text>
       </div>
 
       {link && (
         <div className="col-span-full my-2 flex justify-start uppercase font-semibold transition-colors duration-150 ease-out hover:text-accent lg:col-span-2 lg:my-0 lg:justify-end">
-          <a href={link} target="_blank">
+          <a href={link} target="_blank" rel="noopener noreferrer">
             View Live Site ↗︎
           </a>
         </div>
@@ -63,7 +61,7 @@ function HeroContent({ title, desc, link }: HeroContentProps) {
   );
 }
 
-function HeroMeta({ meta }: { meta: HeroMetaProps[] }) {
+function HeroMeta({ meta }: { meta: HeroMetaItem[] }) {
   const metaSpan =
     meta.length === 3
       ? "col-span-2 md:col-span-4 lg:col-span-4"
@@ -90,17 +88,33 @@ function HeroMeta({ meta }: { meta: HeroMetaProps[] }) {
   );
 }
 
-export default function CaseStudyHero({
-  image,
-  content,
-  meta
-}: CaseStudyHeroProps) {
+export default function CaseStudyHero({ project }: CaseStudyHeroProps) {
+  const { discipline, role, dates, techStack } = project.meta;
+
+  const meta: HeroMetaItem[] = [
+    { label: "Discipline", values: discipline },
+    { label: "Role", values: role },
+    {
+      label: "Timeline",
+      values: [
+        dates.startDate
+          ? `${dates.startDate} - ${dates.endDate}`
+          : dates.endDate
+      ]
+    },
+    { label: "Tech Stack", values: techStack }
+  ];
+
   return (
     <section className="col-span-full grid min-h-screen grid-cols-subgrid items-center">
       <div className="col-span-full grid grid-cols-subgrid">
-        <HeroImage {...image} />
+        <HeroImage {...project.image} />
 
-        <HeroContent {...content} />
+        <HeroContent
+          title={project.title}
+          description={project.heroDescription}
+          link={project.liveSiteUrl}
+        />
 
         <hr className="col-span-full my-2 w-full border-0 border-t border-subtle-foreground" />
 
