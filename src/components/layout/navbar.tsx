@@ -42,7 +42,7 @@ export default function Navbar({ isProjectPage }: { isProjectPage: boolean }) {
         </MenuLink>
         <li>
           <a
-            href="/Eli_Alejandro_Dizon_Resume.pdf"
+            href="/Eli_Aleandro_Dizon_Resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="uppercase font-semibold text-foreground transition-colors duration-150 ease-out hover:text-accent"
