@@ -16,7 +16,7 @@ type CaseStudyHeroProps = {
 
 function HeroImage({ src, alt }: HeroImageProps) {
   return (
-    <div className="col-span-full my-4">
+    <div className="col-span-full mb-4 mt-20">
       <Image
         src={src}
         alt={alt}

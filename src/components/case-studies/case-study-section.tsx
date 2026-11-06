@@ -26,17 +26,23 @@ export default function CaseStudySection({
       aria-labelledby={`${id}-heading`}
       className="col-span-full grid grid-cols-subgrid scroll-mt-24 min-h-24"
     >
-      <div className="col-span-full lg:col-start-2 lg:col-span-8 flex flex-col gap-4">
-        <div className="flex flex-col gap-0.5 text-center">
-          <Text variant="caption" as="p" className="text-foreground uppercase">
-            {label}
-          </Text>
+      <div className="col-span-full lg:col-start-2 lg:col-span-8 flex flex-col ">
+        <div className="flex flex-col gap-2">
+          <div className="flex flex-col gap-0.5 text-center">
+            <Text
+              variant="caption"
+              as="p"
+              className="text-foreground uppercase"
+            >
+              {label}
+            </Text>
 
-          <Text id={`${id}-heading`} variant="h2" as="h2">
-            {heading}
-          </Text>
+            <Text id={`${id}-heading`} variant="h2" as="h2">
+              {heading}
+            </Text>
+          </div>
+          <div className="text-start flex-col flex gap-6">{children}</div>
         </div>
-        {children}
       </div>
     </section>
   );

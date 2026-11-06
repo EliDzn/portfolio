@@ -1,5 +1,5 @@
 import CaseStudyLayout from "@/components/case-studies/case-study-layout";
-import CaseStudyHero from "@/components/case-studies/hero/case-study-hero";
+import CaseStudyHero from "@/components/case-studies/case-study-hero";
 import CaseStudyBody from "@/components/case-studies/case-study-body";
 import CaseStudySection from "@/components/case-studies/case-study-section";
 import Text from "@/components/ui/typography";
