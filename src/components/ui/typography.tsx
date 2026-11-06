@@ -13,6 +13,7 @@ const twMerge = extendTailwindMerge({
         "text-h1-mobile",
         "text-h1-tablet",
         "text-h1-desktop",
+        "text-h2-mobile",
         "text-h2-tablet",
         "text-h2-desktop",
         "text-h3-tablet",
@@ -66,11 +67,11 @@ export default function Text<T extends ElementType = "p">({
 
   const variantClasses: Record<TypographyVariant, string> = {
     display:
-      "text-display-tablet md:text-display-tablet lg:text-display-desktop font-medium",
+      "text-display-mobile md:text-display-tablet lg:text-display-desktop font-medium",
 
     h1: "text-h1-mobile md:text-h1-tablet lg:text-h1-desktop font-semibold",
 
-    h2: "text-h2-tablet lg:text-h2-desktop font-semibold",
+    h2: "text-h2-mobile md:text-h2-tablet lg:text-h2-desktop font-semibold",
 
     h3: "text-h3-tablet lg:text-h3-desktop font-semibold",
 

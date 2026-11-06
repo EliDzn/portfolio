@@ -85,7 +85,7 @@
   --text-display-desktop--letter-spacing: -0.03em;
 
   /* H1 */
-  --text-h1-mobile: 2.1875rem;
+  --text-h1-mobile: 2.75rem;
   --text-h1-tablet: 2.75rem;
   --text-h1-desktop: 3.4375rem;
 
@@ -98,7 +98,8 @@
   --text-h1-desktop--letter-spacing: -0.02em;
 
   /* H2 */
-  --text-h2-tablet: 2.75rem;
+  --text-h2-mobile: 2.1875rem;
+  --text-h2-tablet: 3.4375rem;
   --text-h2-desktop: 2.75rem;
 
   --text-h2-tablet--line-height: 3.25rem;
@@ -134,8 +135,8 @@
   --text-body-md-mobile: 1rem;
   --text-body-md-desktop: 1.125rem;
 
-  --text-body-md-mobile--line-height: 1.5rem;
-  --text-body-md-desktop--line-height: 1.625rem;
+  --text-body-md-mobile--line-height: 1.7;
+  --text-body-md-desktop--line-height: 1.7;
 
   /* Caption */
   --text-caption-base: 0.875rem;
